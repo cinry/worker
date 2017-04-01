@@ -1,0 +1,188 @@
+/*初始化*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    min-width: 1400px;
+
+}
+.myBtn1{
+    padding: 0 20px;
+    margin: 20px;
+}
+.myBtn2{
+    padding: 0 20px;
+    margin: 20px;
+    color: #28a4c9;
+    border: 1px solid #28a4c9;
+    background-color: white;
+}
+.myBtn2:hover{
+    color: #28a4c9;
+}
+.myBtn2:focus{
+    color: #28a4c9;
+}
+
+/*导航*/
+nav>div{
+    min-width: 1000px;
+}
+nav.navbar{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 0 15%;
+    border-bottom: 4px solid #2EB7E5;
+}
+nav>.container-fluid{
+    padding-left: 45px;
+}
+nav .navbar-header{
+    width: 13%;
+    height: 100%;
+}
+a.navbar-brand{
+    padding: 5px 10px 5px 10px;
+}
+a.navbar-brand>img{
+    width: 100%;
+    height: 100%;
+}
+nav>div ul{
+    width: 87%;
+}
+nav>div ul li{
+    width: 12%;
+}
+nav>div ul h5,nav>div ul h6{
+    margin: 0;
+}
+.navbar-default .navbar-nav>li:not(.active)>a:hover{
+background-image: linear-gradient(to bottom,#dbdbdb 0,#e2e2e2 100%);
+}
+.navbar-default .navbar-nav>.active>a:hover{
+    color: white;
+}
+.navbar-default .navbar-nav>.active>a{
+    color: white;
+    background-image: url('../img/1.png');
+    background-position: bottom;
+}
+
+/*banner*/
+.tag{
+    position: relative;
+}
+.tag ul{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    padding-left: 0;
+    margin-left:-102px;
+}
+.tag li{
+    list-style: none;
+    width: 60px;
+    height: 12px;
+    border: 1px solid rgb(154,223,255);
+    margin: 0 20px;
+    display: inline-block;
+}
+
+/*视频*/
+
+.video{
+    width: 65%;
+}
+.cover{
+    height: 0;
+    margin: 0 auto;
+
+}
+.vedioCover{
+    position: relative;
+    display:inline-block;
+    width: 65%;
+    height: 710px;
+    z-index:9;
+    vertical-align: middle;
+    background-size:cover;
+    background-image:url(../media/mask.jpg);
+    background-color: rgba(0,0,0,0.2);
+}
+.vedioCover img{
+    display:inline-block;
+    position:relative;
+    top:40%;
+}
+/*底部*/
+.fou{
+    position: relative;
+}
+.fou>h3{
+    margin: 30px;
+}
+.fou>p{
+    color: #A8A8A8;
+}
+.fou>.row{
+    margin: 30px;
+}
+.fou .row>.col-sm-6>div{
+   margin-top: 30px;
+}
+.fou .media-body{
+    vertical-align: middle;
+}
+.fou .media-body>p{
+    margin: 0;;
+}
+.fou form{
+    margin-top: 30px;
+}
+.fou textarea{
+    height: 200px;
+}
+.fou .myBtn1{
+    margin: 0 auto;
+}
+.fou footer{
+    padding: 30px 0;
+    background-color: #F1F9FC;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.fou footer span{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+
+/*弹框*/
+#myModal{
+    overflow: hidden;
+}
+.modal-content>h4{
+    margin: 20px;
+    font-weight:600;
+}
+.modal-dialog {
+    height: 100%;
+    padding-top: 10%;
+}
+.paddingT{
+    padding-top: 7px;
+}
+.sign-in .col-sm-8{
+    margin-bottom: 5px;
+}
+#myButton{
+    width: 60%;
+}

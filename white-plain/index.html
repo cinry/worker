@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>Title</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--fullpage CSS文件-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- 我的 -->
+    <link href="css/min.css" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/logo.png"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav text-center" id="menu">
+                <li data-menuanchor="page1"><a href="#page1"><h5>主&nbsp;&nbsp;&nbsp;&nbsp;页</h5><h6>Home</h6></a></li>
+                <li data-menuanchor="page2"><a href="#page2"><h5>基因说</h5><h6>Gene Tell</h6></a></li>
+                <li data-menuanchor="page3"><a href="#page3"><h5>服务流程</h5><h6>Process</h6></a></li>
+                <li><a href="#" id="user" data-toggle="modal" data-target="#myModal"><h5>用户登陆</h5><h6>Log In</h6></a></li>
+                <li><a href="#"><h5>基因商城</h5><h6>Mall</h6></a></li>
+                <li><a href="#"><h5>社&nbsp;&nbsp;&nbsp;&nbsp;区</h5><h6>Community</h6></a></li>
+                <li><a href="#"><h5>关于我们</h5><h6>About us</h6></a></li>
+                <li data-menuanchor="page4"><a href="#page4"><h5>联系我们</h5><h6>Contact </h6></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+<div id="fullpage">
+     <div class="section fir">
+         <img src="img/banner1.png" class="img-responsive"/>
+         <div class="tag">
+             <ul>
+                 <li></li>
+                 <li></li>
+             </ul>
+         </div>
+     </div>
+     <div class="section sec">
+         <div class="text-center cover">
+             <div id="vedioCover" class="vedioCover">
+                 <img id="playPauseButton" src="img/play.png">
+             </div>
+         </div>
+         <div class="text-center">
+             <video id='geneClassVideo' class="video shiping" loop="loop">
+                 <source src="media/genetell.webm" type="video/webm"/>
+                 <source src="media/genetell0.mp4" type="video/mp4"/>
+                 Your browser does not support the video tag.
+             </video>
+         </div>
+     </div>
+     <div class="section thi">
+         <img src="img/流程.png" class="img-responsive"/>
+     </div>
+     <div class="section fou">
+         <h3 class="text-center">联系我们</h3>
+         <p class="text-center">非常感谢您的支持和信任，我们的团队欢迎任何形式的合理建议。</p>
+         <div class="row">
+             <div class="col-sm-6">
+                 <div class="media col-sm-offset-4 col-sm-8">
+                     <div class="media-left">
+                         <img class="media-object" src="img/address.png" alt="...">
+                     </div>
+                     <div class="media-body">
+                         <p>电话：027-65025818</p>
+                     </div>
+                 </div>
+                 <div class="media col-sm-offset-4 col-sm-8">
+                     <div class="media-left">
+                         <img class="media-object" src="img/mailbox.png" alt="...">
+                     </div>
+                     <div class="media-body">
+                         <p>邮箱：service@genetell.com</p>
+                     </div>
+                 </div>
+                 <div class="media col-sm-offset-4 col-sm-8">
+                     <div class="media-left">
+                         <img class="media-object" src="img/tel.png" alt="...">
+                     </div>
+                     <div class="media-body">
+                         <p>地址：湖北省武汉市东湖高新区创业<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;街73号留学生创业园E2146</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-sm-6">
+                 <form class="form-horizontal">
+                     <div class="form-group">
+                         <div class="col-sm-8">
+                             <input type="email" class="form-control" id="inputEmail3" placeholder="您的姓名">
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <div class="col-sm-8">
+                             <input type="password" class="form-control" id="inputPassword3" placeholder="邮箱地址">
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <div class="col-sm-8">
+                             <textarea class="form-control" placeholder="您的建议"></textarea>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <div class="col-sm-8">
+                             <button type="submit" class="btn btn-info myBtn1 center-block">提&nbsp;&nbsp;&nbsp;&nbsp;交</button>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+         </div>
+         <footer>
+             <p class="text-center">&copy;2015白原科技&nbsp;All Rights Reserved<span>武汉白原科技有限公司</span>鄂ICP备16007337号-1</p>
+         </footer>
+     </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content log-in"style="display: none;">
+            <h4 class="modal-title text-center">用户登陆</h4>
+            <form class="form-horizontal clearfix">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="email" class="form-control" placeholder="请输入您的用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="password" class="form-control" placeholder="请输入您的密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 记住密码
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 paddingT">
+                        <a href="">忘记密码?</a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-info myBtn1 pull-right">登&nbsp;&nbsp;&nbsp;&nbsp;陆</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn myBtn2 toggle" >注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+        <div class="modal-content sign-in">
+            <h4 class="modal-title text-center">用户注册</h4>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="text" class="form-control" placeholder="请输入您的用户名">
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="password" class="form-control" placeholder="请输入您的密码">
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="password" class="form-control" placeholder="请再次输入您的密码">
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <input type="tel" class="form-control" placeholder="请输入您的手机号">
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="请输验证码">
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" id="myButton" class="btn btn-primary" data-loading-text="60秒" autocomplete="off">
+                                获取验证码
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-info myBtn1">提&nbsp;&nbsp;&nbsp;&nbsp;交</button>
+                </div>
+            </form>
+        </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.extensions.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/min.js"></script>
+
+
+</body>
+</html>
