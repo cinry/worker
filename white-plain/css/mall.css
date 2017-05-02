@@ -1,0 +1,77 @@
+nav>div{
+    min-width: 1000px;
+}
+nav.navbar{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 0 15%;
+    border-bottom: 4px solid #2EB7E5;
+}
+nav>.container-fluid{
+    padding-left: 45px;
+}
+nav .navbar-header{
+    width: 13%;
+    height: 100%;
+}
+a.navbar-brand{
+    padding: 5px 10px 5px 10px;
+}
+a.navbar-brand>img{
+    width: 100%;
+    height: 100%;
+}
+nav>div ul{
+    width: 87%;
+}
+nav>div ul li{
+    width: 12%;
+}
+nav>div ul h5,nav>div ul h6{
+    margin: 0;
+}
+.navbar-default .navbar-nav>li:not(.active)>a:hover{
+    background-image: linear-gradient(to bottom,#dbdbdb 0,#e2e2e2 100%);
+}
+.navbar-default .navbar-nav>.active>a:hover{
+    color: white;
+}
+.navbar-default .navbar-nav>.active>a{
+    color: white;
+    background-image: url('../img/1.png');
+    background-position: bottom;
+}
+
+
+.content{
+    width: 1280px;
+    margin: 0 auto;
+}
+.mallHead{
+    background-color: #d2f3ff;
+    border-top: 10px solid #f1f9fc;
+    margin-bottom: 100px;
+}
+.mallHead>div{
+    width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.mallHead>div>h2{
+    float: left;
+}
+.mallHead>div>a{
+    float: right;
+}
+.thumbnail{
+    padding: 0;
+    border: 1px solid #d2f3ff;
+}
+.thumbnail .caption{
+    color: #A8A8A8;
+}
+.thumbnail .price{
+    color: #44bce7;
+    font-size: 18px;
+}

@@ -1,15 +1,15 @@
 /**
  * Created by admin on 2017/4/14.
  */
-var tpl=`
-    <div class="detailHead">
-        <div>
-            <ol class="breadcrumb">
+var tplDetail=`
+    <div class="navHead">
+        <div class="clearfix">
+            <ol class="breadcrumb pull-left">
                 <li><a href="mall.html#mallContent">基因说·{{title}}</a></li>
                 <li class="active">套餐详情</li>
             </ol>
+            <h5 class="jumpChar pull-right"><span class="char" id="end"></span>购物车</h5>
         </div>
-        <i class="jumpBuy">购物车</i>
     </div>
     <p class="getUp">为了方便您购买，请先登录<a href="#">立即登录</a></p>
     <div class="contentUp">
@@ -25,21 +25,22 @@ var tpl=`
             <h6>选择套餐分类</h6>
             <div class="tab">
                 {{#with combo}}
-                <a class="btn3" state="true" href="#"><span>{{0.name}}</span>{{0.price}}元</a>
-                <a class="btn3" state="false" href="#"><span>{{1.name}}</span>{{1.price}}元</a>
+                <button class="btn3" state="true" href="#"><span>{{0.name}}</span>{{0.price}}元</button>
+                <button class="btn3" state="false" href="#"><span>{{1.name}}</span>{{1.price}}元</button>
                 {{#if 2.name}}
-                <a class="btn3" state="false" href="#"><span>{{2.name}}</span>{{2.price}}元</a>
+                <button class="btn3" state="false" href="#"><span>{{2.name}}</span>{{2.price}}元</button>
                 {{/if}}
                 {{/with}}
             </div>
             <div>
-                <a class="btn3 add" href="#">加入购物车</a>
-                <a class="btn3 buy" href="#">立即购买</a>
+            <div id="tip" style="display: none"></div>
+                <button class="btn3 add" href="#">加入购物车</button>
+                <button class="btn3 buy" href="#">立即购买</button>
             </div>
         </div>
     </div>
     <img class="img-responsive imgDetail" src={{img2}}>
-    <h4 class="text-center">产品内容</h4>
+    <h4 class="text-center contentHead">产品内容</h4>
     <p class="contentP">{{content}}</p>
     {{#each combo}}
     <h5 class="text-center">{{this.name}}</h5>
@@ -90,8 +91,11 @@ var tpl=`
     </div>
     {{/if}}
     {{/each}}
-    <script src="js/detail-template.js"></script>
-    <script src="js/template/buy.js"></script>
+    
+
+    <script src="js/templates/shopping-template.js"></script>
+    <script type="text/javascript" src="js/tools/fly.js"></script>
+    <script src="js/detail.js"></script>
 `;
 
 
@@ -119,9 +123,9 @@ $.get(url,function (data) {
             })
         }
     }
-    var template = Handlebars.compile(tpl);
+    var template = Handlebars.compile(tplDetail);
     //匹配json内容
-    var html = template(context);
+    var txt = template(context);
     //输入模板
-    $('body').html(html);
+    $('#tpl').html(txt);
 });

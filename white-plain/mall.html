@@ -2,9 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>商城</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/mall.css">
 </head>
 <body>
-$END$
-</body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="img/logo.png"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav text-center" id="menu">
+                <li data-menuanchor="page1"><a href="index.html#page1"><h5>主&nbsp;&nbsp;&nbsp;&nbsp;页</h5><h6>Home</h6></a></li>
+                <li data-menuanchor="page2"><a href="index.html#page2"><h5>基因说</h5><h6>Gene Tell</h6></a></li>
+                <li data-menuanchor="page3"><a href="index.html#page3"><h5>服务流程</h5><h6>Process</h6></a></li>
+                <li><a href="#" id="user" data-toggle="modal" data-target="#myModal"><h5>用户登陆</h5><h6>Log In</h6></a></li>
+                <li  class="active"><a href="mall.html"><h5>基因商城</h5><h6>Mall</h6></a></li>
+                <li><a href="#"><h5>社&nbsp;&nbsp;&nbsp;&nbsp;区</h5><h6>Community</h6></a></li>
+                <li><a href="#"><h5>关于我们</h5><h6>About us</h6></a></li>
+                <li data-menuanchor="page4"><a href="index.html#page4"><h5>联系我们</h5><h6>Contact </h6></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+<div class="content">
+    <img class="img-responsive" src="img/mall/437872274301737330.png"/>
+</div>
+<div class="mallHead" id="mallContent">
+    <div>
+        <h2>基因商城经典套餐</h2>
+    </div>
+</div>
+<div class="container content">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="jumpDetail" href="#"><img src="img/mall/001.png" alt="..."></a>
+                <div class="caption">
+                    <h4 class="text-center">基因说·健康女神套餐</h4>
+                    <p class="text-center">专门针对于女性群体设计的检测服务</p>
+                    <p class="text-center price">229元起</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="jumpDetail" href="#"><img src="img/mall/002.png" alt="..."></a>
+                <div class="caption">
+                    <h4 class="text-center">基因说·产后恢复套餐</h4>
+                    <p class="text-center">专门针对于女性群体设计的检测服务</p>
+                    <p class="text-center price">229元起</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="jumpDetail" href="#"><img src="img/mall/003.png" alt="..."></a>
+                <div class="caption">
+                    <h4 class="text-center">基因说·儿童成长套餐</h4>
+                    <p class="text-center">专门针对于女性群体设计的检测服务</p>
+                    <p class="text-center price">229元起</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="jumpDetail" href="#"><img src="img/mall/004.png" alt="..."></a>
+                <div class="caption">
+                    <h4 class="text-center">基因说·快乐运动套餐</h4>
+                    <p class="text-center">专门针对于女性群体设计的检测服务</p>
+                    <p class="text-center price">229元起</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="jumpDetail" href="#"><img src="img/mall/005.png" alt="..."></a>
+                <div class="caption">
+                    <h4 class="text-center">基因说·全基因组套餐</h4>
+                    <p class="text-center">专门针对于女性群体设计的检测服务</p>
+                    <p class="text-center price">229元起</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $('.jumpDetail').on('click',function (e) {
+        var list=$('.jumpDetail').index($(this))+1;
+        location.href = 'shopping.html?page='+list;
+        if ( e && e.preventDefault ){
+            e.preventDefault();
+        } else{
+            window.event.returnValue = false;
+        }
+        return false
+    })
+</script>
+    </body>
 </html>

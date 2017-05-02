@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
 
     <style>
         *{
@@ -85,83 +87,129 @@
     </style>
 </head>
 <body>
-<div class="case">
-    <div class="state">
-        <h3>
-            订单状态：<span>提交订单</span>
-        </h3>
-        <div class="plan">
-            <div class="line">
-                <div class="dot">
-                    <p>提交订单</p>
+<script id="tpl" type="text/x-handlebars-template">
+    <div class="case">
+        <div class="state">
+            <h3>
+                订单状态：<span>提交订单</span>
+            </h3>
+            <div class="plan">
+                <div class="line">
+                    <div class="dot">
+                        <p>提交订单</p>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="dot">
+                        <p>已购买</p>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="dot">
+                        <p>待收货</p>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="dot">
+                        <p>样本签收</p>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="dot">
+                        <p>送检</p>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="dot">
+                        <p>结果分析</p>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="dot">
+                        <p>查看报告</p>
+                    </div>
                 </div>
             </div>
-            <div class="line">
-                <div class="dot">
-                    <p>已购买</p>
+        </div>
+        <div class="container-fluid">
+            <p>收件人：王力宏<span>13811111111</span></p>
+            <p>收件地址：湖北省 武汉市 东湖高新区</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <img class="media-object" src="../img/mall/001.png" alt="...">
+                        </div>
+                        <div class="media-body media-middle">
+                            <h4 class="media-heading">健康女神</h4>
+                            <p>专门针对于女性群体设计的基因检测服务</p>
+                            <h5>套餐分类：A套餐</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 disTable">
+                    <div class="clearfix disMiddle">
+                        <h4 class="pull-left">299元</h4>
+                        <button class="btn4 pull-right" disabled>支付</button>
+                    </div>
                 </div>
             </div>
-            <div class="line">
-                <div class="dot">
-                    <p>待收货</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>订单编号：20170212</p>
+                    <p>联系我们：027-65025818（工作日 9:00-18:00）</p>
                 </div>
-            </div>
-            <div class="line">
-                <div class="dot">
-                    <p>样本签收</p>
-                </div>
-            </div>
-            <div class="line">
-                <div class="dot">
-                    <p>送检</p>
-                </div>
-            </div>
-            <div class="line">
-                <div class="dot">
-                    <p>结果分析</p>
-                </div>
-            </div>
-            <div class="line">
-                <div class="dot">
-                    <p>查看报告</p>
+                <div class="col-md-6">
+                    <p>您的订单暂未付款，请在尽快内完成支付<br/>24小时内未付款，将自动取消订单</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <p>收件人：王力宏<span>13811111111</span></p>
-        <p>收件地址：湖北省 武汉市 东湖高新区</p>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <img class="media-object" src="img/mall/健康女神.png" alt="...">
-                    </div>
-                    <div class="media-body media-middle">
-                        <h4 class="media-heading">健康女神</h4>
-                        <p>专门针对于女性群体设计的基因检测服务</p>
-                        <h5>套餐分类：A套餐</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 disTable">
-                <div class="clearfix disMiddle">
-                    <h4 class="pull-left">299元</h4>
-                    <button class="btn4 pull-right" disabled>支付</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <p>订单编号：20170212</p>
-                <p>联系我们：027-65025818（工作日 9:00-18:00）</p>
-            </div>
-            <div class="col-md-6">
-                <p>您的订单暂未付款，请在尽快内完成支付<br/>24小时内未付款，将自动取消订单</p>
-            </div>
-        </div>
-    </div>
-</div>
-
+</script>
+<script>
+    var tpl   =  $("#tpl").html();
+    var template = Handlebars.compile(tpl);
+    //匹配json内容
+    var context= {
+        "order_id": 1,
+        "order_name": "基因说",
+        "price": 35,
+        "quantity": 2,
+        "subject": "基因说",
+        "out_trade_no": "120170416163757500508",
+        "seller_email": null,
+        "body": null,
+        "buyer_email": null,
+        "show_url": "http detail",
+        "pay_method": null,
+        "default_bank": null,
+        "bank_no": null,
+        "order_status": "-1",
+        "uid": 1,
+        "addr": null,
+        "express_status": 3,
+        "order_time": 1492331877000,
+        "pay_success_time": null,
+        "update_time": 1492331877000,
+        "goods_id": 14525,
+        "total_fee": 70,
+        "pic_link": null,
+        "send_time": null,
+        "user": null,
+        "progress": 0,
+        "log_company": null,
+        "log_order": null,
+        "shou_tel": null
+    }
+    var html = template(context);
+    //输入模板
+    $('body').html(html);
+    var lines = document.getElementsByClassName('line');
+    var dots = document.getElementsByClassName('dot');
+    for (var i=0;i <= context.express_status;i++) {
+        lines[i].style = 'background-color:#44bce7';
+        dots[i].style = 'background-color:#44bce7'
+    }
+</script>
 </body>
 </html>

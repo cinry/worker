@@ -49,16 +49,24 @@
         .mo{
             width: 100%;
             height: 100%;
-            position: absolute;
+            position: fixed;
             top: 0;
             background-color: rgba(0,0,0,0.2);
             z-index: 999;
             display: none;
         }
         .box{
-            width: 900px;
-            margin: 200px auto;
+            width: 600px;
+            margin: 50px auto;
+            padding: 20px;
             border: 2px solid #A8A8A8;
+            background-color: white;
+        }
+        .myBtn2{
+            padding: 0 20px;
+            margin: 20px;
+            color: #28a4c9;
+            border: 1px solid #28a4c9;
             background-color: white;
         }
     </style>
@@ -72,7 +80,11 @@
     <div class="row">
         <div class="col-md-1">寄送至</div>
         <div class="col-md-11 addrassCase">
-            <p><input type="radio" name="address"/><label>湖北省武汉市武昌区</label><a class="delete" href="#">删除</a></p>
+            <p>
+                <input type="radio" name="address"/>
+                <label>湖北省武汉市武昌区</label>
+                <a class="delete" href="#">删除</a>
+            </p>
         </div>
     </div>
     <a href="#" class="add">使用新地址</a>
@@ -83,7 +95,7 @@
         <div class="col-md-6">
             <div class="media">
                 <div class="media-left media-middle">
-                    <img class="media-object" src="img/mall/健康女神.png" alt="...">
+                    <img class="media-object" src="../img/mall/001.png" alt="...">
                 </div>
                 <div class="media-body media-middle">
                     <h4 class="media-heading">健康女神</h4>
@@ -108,23 +120,39 @@
 <div class="mo">
     <div class="box">
         <form id="addressText">
-            <div>
-                姓名：<input type="text" name="name"/>
+                <div class="form-group">
+                    <label>姓名：</label>
+                        <input type="text" class="form-control" name="name"/>
+                </div>
+                <div class="form-group">
+                    <label>联系电话：</label>
+                        <input type="tel" class="form-control" name="tel"/>
+                </div>
+                <div class="form-group">
+                    <label>省：</label>
+                        <select id="sheng" class="form-control" name="sheng"></select>
+                </div>
+            <div class="form-group">
+                    <label>市：</label>
+                        <select id="shi" class="form-control" name="shi"></select>
             </div>
-            <div>
-                联系电话：<input type="tel" name="tel"/>
+            <div class="form-group">
+                    <label>区：</label>
+                        <select id="qu" class="form-control" name="qu"></select>
+                </div>
+            <div class="form-group">
+                <label>详细地址：</label>
+                <textarea class="form-control" name="content"></textarea>
             </div>
-            <div>
-                <select id="sheng" name="sheng"></select>
-                <select id="shi" name="shi"></select>
-                <select id="qu" name="qu"></select>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button class="btn myBtn2 pull-right" id="query">确&nbsp;&nbsp;&nbsp;&nbsp;认</button>
+                </div>
+                <div class="col-sm-6">
+                    <button class="out btn myBtn2">取&nbsp;&nbsp;&nbsp;&nbsp;消</button>
+                </div>
             </div>
-            <div>
-                详细地址：<textarea name="content"></textarea>
-            </div>
-            <button id="query">确认</button>
-            <button class="out">取消</button>
-            <script src="js/tools/china.js"></script>
+            <script src="../js/tools/china.js"></script>
             <script>
                 var s="",si=0,c="",ci=0,q="",qi=0;
                 for (var i=0;i<chinaAreaMap.length;i++){
@@ -183,7 +211,7 @@
                 //取消
                 $('.out').on('click',function () {
                     $('.mo').fadeOut('fast');
-                    $('#addressText').reset();
+                    $('#addressText')[0].reset();
                 });
 
                 //创建新选项
@@ -193,7 +221,7 @@
                     for (var i=0;i<js.length;i++){
                         j+=js[i].value;
                     }
-                    var txt='<p><input type="radio" name="address"/><label>'+j+'</label><a class="delete" href="#">删除</a></p>';
+                    var txt='<p> <input type="radio" name="address"/> <label>'+j+'</label> <a class="delete" href="#">删除</a> </p>';
                     $('.addrassCase').append(txt);
                     $('.mo').fadeOut("fast");
                     $('#addressText')[0].reset();
@@ -203,6 +231,11 @@
                         window.event.returnValue = false;
                     }
                     return false
+                });
+
+//                删除选项
+                $('.addrassCase').on('click','.delete', function () {
+                    $(this).parent().remove()
                 })
             </script>
         </form>

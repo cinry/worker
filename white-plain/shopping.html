@@ -5,137 +5,32 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/detail.css">
-
-    <style>
-        /*订单*/
-        /*.head{*/
-            /*background-color: #d2f3ff;*/
-        /*}*/
-        /*h2{*/
-            /*width: 1280px;*/
-            /*line-height: 50px;*/
-            /*font-size: 18px;*/
-            /*margin: 0 auto;*/
-        /*}*/
-        /*.case{*/
-            /*width: 1280px;*/
-            /*margin: 0 auto;*/
-            /*border: 1px solid #44bce7;*/
-            /*margin-bottom: 20px;*/
-        /*}*/
-        /*.media-object{*/
-            /*width: 160px;*/
-            /*height: 160px;*/
-        /*}*/
-        /*.disTable{*/
-            /*height: 160px;*/
-            /*display: table;*/
-        /*}*/
-        /*.disMiddle{*/
-            /*display: table-cell;*/
-            /*vertical-align: middle;*/
-        /*}*/
-        /*.btn4{*/
-            /*margin:40px;*/
-            /*text-align: center;*/
-            /*display: inline-block;*/
-            /*width: 100px;*/
-            /*line-height: 30px;*/
-            /*border: 1px solid #A8A8A8;*/
-            /*background-color: transparent;*/
-        /*}*/
-        /*.total{*/
-            /*line-height: 120px;*/
-        /*}*/
-        /*.mo{*/
-            /*width: 100%;*/
-            /*height: 100%;*/
-            /*position: absolute;*/
-            /*top: 0;*/
-            /*background-color: rgba(0,0,0,0.2);*/
-            /*z-index: 999;*/
-            /*display: none;*/
-        /*}*/
-        /*.box{*/
-            /*width: 900px;*/
-            /*margin: 200px auto;*/
-            /*border: 2px solid #A8A8A8;*/
-            /*background-color: white;*/
-        /*}*/
-
-/*购物车*/
-        .head{
-            background-color: #d2f3ff;
-        }
-        h2{
-            width: 1280px;
-            line-height: 50px;
-            font-size: 18px;
-            margin: 0 auto;
-        }
-        .case{
-            width: 1280px;
-            margin: 0 auto;
-            border: 1px solid #44bce7;
-            margin-bottom: 20px;
-            padding: 40px;
-        }
-        .media-object{
-            width: 160px;
-            height: 160px;
-        }
-        .fload{
-            height: 80px;
-            margin-bottom: -50%;
-        }
-        .btn4{
-            text-align: center;
-            display: inline-block;
-            width: 100px;
-            line-height: 30px;
-            border: 1px solid #A8A8A8;
-            background-color: transparent;
-        }
-        .total{
-            line-height: 30px;
-        }
-        .jian,.jia{
-            cursor: pointer;
-            display: inline-block;
-            width: 30px;
-            text-align: center;
-        }
-        .num{
-            width: 50px;
-            text-align: center;
-        }
-        i{
-            cursor: pointer;
-        }
-        i:hover{
-            color: #A8A8A8;
-        }
-        .char{
-            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NTIxOERDMEREQTIxMUUzODE0RUUzMDk1QTM1RjhENiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NTIxOERDMUREQTIxMUUzODE0RUUzMDk1QTM1RjhENiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU1MjE4REJFRERBMjExRTM4MTRFRTMwOTVBMzVGOEQ2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU1MjE4REJGRERBMjExRTM4MTRFRTMwOTVBMzVGOEQ2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+nUzVwwAAAShJREFUeNpi/P//P8NgAUwMgwiMOmbUMaOOGXXMUHZMNRB/BeL/UHyKkAYWGjlEBohb0MT+U8sxvCQ6Zg6UPgPETlD2Z2o4BhS8piQ45BcQs0HZ7cQ4gtSQ+Q3EP4hUyw2lnwDxOlKCkxjHmAExKxCLEGnmSiC2BeLJpCY0RiLbMzuB2JIIdd+AWBwaVSD6A7WzNjMQCwIxBxFqxaD0AlIdQkrIMBAZVRuhiV0NiG+T6hhSypktREQVqAjYR45DSHEMKKoEiChvngNxKrklJSOJDXJGKM2DRQ5k0Bd61k2weuYzFgxySBUQfwTiTiSH0yRkQFH6AErLQgtCZMAJzdrI/B+0DJm/UIwNgCzug4ZSLxD/pHWaGW1cjTpm1DGjjhl1DLUAQIABAK/XRO9Mpf8WAAAAAElFTkSuQmCC);
-            width: 35px;
-            height: 35px;
-            display: inline-block;
-        }
-        .u-flyer{
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            border-radius: 50%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/shopping.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
-
-
 </head>
 <body>
-<script src="js/templates/detail-template.js"></script>
-
+<!--<nav class="navbar navbar-default">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+            <!--<a class="navbar-brand" href="#"><img src="img/logo.png"/></a>-->
+        <!--</div>-->
+        <!--<div class="collapse navbar-collapse">-->
+            <!--<ul class="nav navbar-nav text-center" id="menu">-->
+                <!--<li data-menuanchor="page1"><a href="index.html#page1"><h5>主&nbsp;&nbsp;&nbsp;&nbsp;页</h5><h6>Home</h6></a></li>-->
+                <!--<li data-menuanchor="page2"><a href="index.html#page2"><h5>基因说</h5><h6>Gene Tell</h6></a></li>-->
+                <!--<li data-menuanchor="page3"><a href="index.html#page3"><h5>服务流程</h5><h6>Process</h6></a></li>-->
+                <!--<li><a href="#" id="user" data-toggle="modal" data-target="#myModal"><h5>用户登陆</h5><h6>Log In</h6></a></li>-->
+                <!--<li><a href="mall.html"><h5>基因商城</h5><h6>Mall</h6></a></li>-->
+                <!--<li><a href="#"><h5>社&nbsp;&nbsp;&nbsp;&nbsp;区</h5><h6>Community</h6></a></li>-->
+                <!--<li><a href="#"><h5>关于我们</h5><h6>About us</h6></a></li>-->
+                <!--<li data-menuanchor="page4"><a href="index.html#page4"><h5>联系我们</h5><h6>Contact </h6></a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+<div id="tpl">
+    <script src="js/templates/detail-template.js"></script>
+</div>
 </body>
 </html>

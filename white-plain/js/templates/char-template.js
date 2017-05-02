@@ -1,7 +1,7 @@
 /**
  * Created by admin on 2017/4/14.
  */
-var tplBuy=`
+var tplChar=`
     <div class="navHead">
         <div>
             <ol class="breadcrumb">
@@ -57,7 +57,7 @@ var tplBuy=`
         </div>
     </div>
 </div>
-<script src="js/buy.js"></script>
+<script src="js/char.js"></script>
 <script src="js/templates/shopping-template.js"></script>
 `;
 

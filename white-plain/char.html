@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/char.css">
+    <link rel="stylesheet" href="css/shopping.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
 </head>
 <body>
-$END$
+<script src="js/templates/char-template.js"></script>
+<script>
+    (function () {
+        var template = Handlebars.compile(tplChar);
+        $.ajax({
+            url:'http://192.168.0.125:8081/genetell-rf/shoping/carList.do',
+            success:function (data) {
+                console.log(data);
+                if (data.msg==='查询成功') {
+                    var context=data.result;
+                    //匹配json内容
+                    var html = template(context);
+                    //输入模板
+                    $('body').html(html);
+                }
+            }
+        });
+    })()
+</script>
 </body>
 </html>

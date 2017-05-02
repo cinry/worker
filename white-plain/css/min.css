@@ -13,12 +13,12 @@ body{
     margin: 20px;
 }
 .myBtn2{
-    padding: 0 20px;
-    margin: 20px;
-    color: #28a4c9;
-    border: 1px solid #28a4c9;
-    background-color: white;
-}
+     padding: 0 20px;
+     margin: 20px;
+     color: #28a4c9;
+     border: 1px solid #28a4c9;
+     background-color: white;
+ }
 .myBtn2:hover{
     color: #28a4c9;
 }
@@ -82,7 +82,7 @@ background-image: linear-gradient(to bottom,#dbdbdb 0,#e2e2e2 100%);
     left: 50%;
     bottom:0;
     padding-left: 0;
-    margin-left:-102px;
+    margin-left:-150px;
 }
 .tag li{
     list-style: none;

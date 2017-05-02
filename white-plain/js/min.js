@@ -1,4 +1,10 @@
 $(function(){
+    // 判断登陆弹框
+    if (location.hash==='#login') {
+        $('#myModal').modal('toggle');
+        $('.sign-in').hide();
+        $('.log-in').show();
+    };
     // 满屏
     $('#fullpage').fullpage({
         menu:'#menu',
@@ -11,7 +17,7 @@ $(function(){
         $('.fir li').eq(n).css('background','#9adfff');
         setInterval(function () {
             n++;
-            if (n>1) {
+            if (n>2) {
                 n=0;
             }
             $('.fir img').attr('src','img/banner'+(n+1)+'.png');
@@ -20,7 +26,78 @@ $(function(){
         },2000);
     }());
 
-    // 验证码
+
+    /* 用户登陆*/
+    $('#user').on('click',function () {
+        $('.sign-in').hide();
+        $('.log-in').show();
+
+    });
+    // 切换
+    $('.toggle').on('click',function () {
+        $('.sign-in,.log-in').toggle();
+        return false;
+    });
+    // 登陆
+    $('#logIn').on('click',function () {
+        var lis=$('.log-in form').serialize();
+        $.ajax({
+            type: "POST",
+            url:'http://192.168.0.125:8081/genetell-rf/user/login.do',
+            data:lis,
+            dataType:'json',
+            success:function (data) {
+                if (data.msg) {
+                    alert(data.msg)
+                }else {
+                    window.sessionStorage.uid = data.id;
+                    $('#myModal').modal('toggle')
+                }
+            }
+        });
+        return false
+    });
+
+    /*注册验证*/
+    $('.uName').on('blur',function () {
+        var bar=false;
+        state.bind($(this))(bar)
+    });
+    $('.pw1').on('blur',function () {
+        var bar=false;
+        state.bind($(this))(bar)
+    });
+    $('.pw2').on('blur',function () {
+        var bar=false;
+        if ($('.pw1').val() === $('.pw2').val()) {
+            bar = true;
+            $(this).next('p').text('密码正确')
+        }else {
+            $(this).next('p').text('密码不一样')
+        }
+        state.bind($(this))(bar);
+        var it=$(this);
+        $('.pw1').on('blur',function () {
+            if ($('.pw1').val() != $('.pw2').val()) {
+                bar=false
+            }else {
+                bar=true
+            }
+            state.bind(it)(bar);
+        })
+    });
+    $('.tel').on('blur',function () {
+        var bar=false;
+        state.bind($(this))(bar)
+    });
+    // 输入框状态样式
+    function state(bar) {
+        $(this).parent().removeClass('has-warning');
+        $(this).parent().toggleClass('has-success',bar);
+        $(this).parent().toggleClass('has-error',!bar)
+    }
+
+    /* 验证码*/
     $('#myButton').on('click', function () {
         var $btn = $(this);
         var time = 60;
@@ -35,18 +112,11 @@ $(function(){
                 $btn.removeAttr('disabled');
             }
         },1000);
-    });
-
-    // 用户登陆
-    $('#user').on('click',function () {
-        $('.sign-in').hide();
-        $('.log-in').show();
-
-    });
-
-    $('.toggle').on('click',function () {
-        $('.sign-in,.log-in').toggle();
-        return false;
+        var tel=$('.tel').val();
+        $.post('http://192.168.0.125:8081/genetell-rf/reg/getSmsCode.do',{tel:13407146805},
+        function (data) {
+            console.log(data)
+        })
     });
 
     /*视频处理区*/

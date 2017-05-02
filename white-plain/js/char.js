@@ -2,7 +2,7 @@
  * Created by admin on 2017/4/14.
  */
 
-$('.breadcrumb li a').eq(0).text(title);
+$('.breadcrumb li a').eq(0).text();
 count($('.all'));
 //全选
 $('.all').on('change',function () {
@@ -136,7 +136,7 @@ $('#orders').click(function () {
                     //匹配json内容
                     var html = template(context);
                     //输入模板
-                    $('#tpl').html(html);
+                    $('body').html(html);
                 }
             }
         })
