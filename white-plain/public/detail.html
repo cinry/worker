@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="detailHead">
+    <div>
+        <ol class="breadcrumb">
+            <li><a href="#">健康女神</a></li>
+            <li class="active">套餐详情</li>
+        </ol>
+    </div>
+</div>
+<p class="getUp">为了方便您购买，请先登录<a href="#">立即登录</a></p>
+<div class="contentUp">
+    <img src="img/mall/健康女神.png"/>
+    <div>
+        <h5 class="product">健康女神</h5>
+        <p>专门针对于女性群体设计的基因检测服务</p>
+        <p>299元-1999元</p>
+        <h6>选择套餐分类</h6>
+        <div class="tab">
+            <a class="btn3" state="true" href="#"><span>A套餐</span>299元</a>
+            <a class="btn3" state="false" href="#"><span>B套餐</span>1999元</a>
+        </div>
+        <div>
+            <a class="btn3 add" href="#">加入购物车</a>
+            <a class="btn3 buy" href="#">立即购买</a>
+        </div>
+        <script>
+            $('.tab>a').on('click',function () {
+                var state=$(this).attr('state');
+                if (state=='false'){
+                    $('.tab>a').attr('state',"false");
+                    $(this).attr('state',"true");
+                }
+            });
+
+            //立即购买
+            $('.buy').on('click',function () {
+                alert(1)
+            });
+
+            //加入购物车
+            $('.add').on('click',function () {
+                var product=$('.product').text();
+                var tab=$('.tab>a[state="true"]>span').text();
+                var price=$('.tab>a[state="true"]').text();
+                var obj={};
+                obj.product=product;
+                obj.tab=tab;
+                obj.price=price;
+                console.log(obj);
+            })
+        </script>
+    </div>
+</div>
+
+<img class="img-responsive imgDetail" src="img/metail/健康女神详情.png">
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
+
+
+    <style>
+        .head{
+            background-color: #d2f3ff;
+        }
+        h2{
+            width: 1280px;
+            line-height: 50px;
+            font-size: 18px;
+            margin: 0 auto;
+        }
+        .case{
+            width: 1280px;
+            margin: 0 auto;
+            border: 1px solid #44bce7;
+            margin-bottom: 20px;
+            padding: 40px;
+        }
+        .media-object{
+            width: 160px;
+            height: 160px;
+        }
+        .fload{
+            height: 80px;
+            margin-bottom: -50%;
+        }
+        .btn4{
+            text-align: center;
+            display: inline-block;
+            width: 100px;
+            line-height: 30px;
+            border: 1px solid #A8A8A8;
+            background-color: transparent;
+        }
+        .total{
+            line-height: 30px;
+        }
+        .jian,.jia{
+            cursor: pointer;
+            display: inline-block;
+            width: 30px;
+            text-align: center;
+        }
+        .num{
+            width: 50px;
+            text-align: center;
+        }
+        i{
+            cursor: pointer;
+        }
+        i:hover{
+            color: #A8A8A8;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <h2>购物车</h2>
+</div>
+
+<div class="container-fluid case">
+    <input type="checkbox" class="single"/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img class="media-object" src="img/mall/健康女神.png" alt="...">
+                </div>
+                <div class="media-body media-middle">
+                    <h4 class="media-heading">健康女神</h4>
+                    <p>专门针对于女性群体设计的基因检测服务</p>
+                    <h5>套餐分类：A套餐</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 disTable">
+            <h5 class="disMiddle col-md-8">￥299</h5>
+            <h5 class="col-md-4"><i>删除</i></h5>
+        </div>
+    </div>
+</div>
+<div class="container-fluid case">
+    <input type="checkbox" class="single"/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img class="media-object" src="img/mall/健康女神.png" alt="...">
+                </div>
+                <div class="media-body media-middle">
+                    <h4 class="media-heading">健康女神</h4>
+                    <p>专门针对于女性群体设计的基因检测服务</p>
+                    <h5>套餐分类：A套餐</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="fload"></div>
+            <div class="col-md-2">
+                <p>单价</p>
+                <p>￥229</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <p>数量</p>
+                <b class="jian">-</b>
+                <input class="num" type="text" value="1" />
+                <b class="jia">+</b>
+            </div>
+            <div class="col-md-2">
+                <p>总价</p>
+                <p>￥299</p>
+            </div>
+            <div class="col-md-4"><i>删除</i></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid case">
+    <input type="checkbox" class="single"/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img class="media-object" src="img/mall/健康女神.png" alt="...">
+                </div>
+                <div class="media-body media-middle">
+                    <h4 class="media-heading">健康女神</h4>
+                    <p>专门针对于女性群体设计的基因检测服务</p>
+                    <h5>套餐分类：A套餐</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 disTable">
+            <h5 class="disMiddle col-md-8">￥299</h5>
+            <h5 class="col-md-4"><i>删除</i></h5>
+        </div>
+    </div>
+</div>
+<div class="container-fluid case">
+    <input type="checkbox" class="single"/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img class="media-object" src="img/mall/健康女神.png" alt="...">
+                </div>
+                <div class="media-body media-middle">
+                    <h4 class="media-heading">健康女神</h4>
+                    <p>专门针对于女性群体设计的基因检测服务</p>
+                    <h5>套餐分类：A套餐</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 disTable">
+            <h5 class="disMiddle col-md-8">￥299</h5>
+            <h5 class="col-md-4"><i>删除</i></h5>
+        </div>
+    </div>
+</div>
+<div class="container-fluid case">
+    <div class="row">
+        <div class="col-md-6"><input type="checkbox" class="all"/><i class="allText">全选</i></div>
+        <div class="col-md-4 total">已选商品1件 合计：299元</div>
+        <div class="col-md-2">
+            <button class="btn4" id="orders">结算</button>
+        </div>
+    </div>
+</div>
+<script>
+
+    //全选
+    $('.all').on('change',function () {
+        if(this.checked===true){
+            $('.allText').text('取消全选');
+            $('.single').each(function () {
+                this.checked=true
+            })
+        }else {
+            $('.allText').text('全选');
+            $('.single').each(function () {
+                this.checked=false
+            })
+        }
+    });
+    $('.single').on('change',function () {
+        var state=this.checked;
+        var num=1;
+        var all=document.getElementsByClassName('all')[0];
+        if (state===true){
+            $('.single').each(function () {
+                if (this.checked != state) {
+                    num=0
+                }
+            });
+            if (num===1){
+                $('.allText').text('取消全选');
+                all.checked=state
+            }
+        }else {
+            all.checked = false;
+            $('.allText').text('全选');
+        }
+    })
+</script>
+<script id="tpl" type="text/x-handlebars-template">
+    <div class="head">
+        <h2>结算</h2>
+    </div>
+    <div class="container-fluid case">
+        <h4>确认收货地址</h4>
+        <div class="row">
+            <div class="col-md-1">寄送至</div>
+            <div class="col-md-11 addrassCase">
+                <p><input type="radio" name="address"/><label>湖北省武汉市武昌区</label><a class="delete" href="#">删除</a></p>
+            </div>
+        </div>
+        <a href="#" class="add">使用新地址</a>
+    </div>
+</script>
+<script>
+    $('.num').on('input propertychange',function () {
+        if(isNaN($(this).val())){
+            $(this).val(1);
+        }
+    });
+    $(".jian").click(function(){
+        var lsoek=$(this).parent().find(".num");
+        if(lsoek.val()>1){
+            var lskoe=parseInt(lsoek.val());
+            lsoek.val(lskoe-1);
+        }
+    });
+    $('.jia').click(function () {
+        var lsoek=$(this).parent().find(".num");
+        var lskoe=parseInt(lsoek.val());
+        lsoek.val(lskoe+1);
+    })
+    $('#orders').on('click',function () {
+        $('.single:checked')
+    })
+</script>
+</body>
+</html>
