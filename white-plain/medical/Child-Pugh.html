@@ -1,0 +1,117 @@
+<HTML>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肝硬化死亡率的Child-Pugh评分</title>
+ <script src="jquery-2.1.3.js" type="text/javascript"></script>
+<script>
+function countChoices(obj) {
+
+	box1 = obj.form.box1.checked;
+	box2 = obj.form.box2.checked;
+	box3 = obj.form.box3.checked;
+	box4 = obj.form.box4.checked;
+	box5 = obj.form.box5.checked;
+	box6 = obj.form.box6.checked;
+	box7 = obj.form.box7.checked;
+	box8 = obj.form.box8.checked;
+	box9 = obj.form.box9.checked;
+	box10 = obj.form.box10.checked;
+	box11 = obj.form.box11.checked;
+	box12 = obj.form.box12.checked;
+	box13 = obj.form.box13.checked;
+	box14 = obj.form.box14.checked;
+	box15 = obj.form.box15.checked;
+
+
+	count=(box1 ? 1 : 0)+(box2 ? 2 : 0)+(box3 ? 3 : 0)+(box4 ? 1 : 0)+(box5 ? 2 : 0)+(box6 ? 3 : 0)+(box7 ? 1 : 0)+(box8 ? 2 : 0)+(box9 ? 3 : 0)
+	+(box10 ? 1 : 0)+(box11 ? 2 : 0)+(box12 ? 3 : 0)+(box13 ? 1 : 0)+(box14 ? 2 : 0)+(box15 ? 3 : 0);
+	if(count>0&&count<6){
+		$("#jieguo").val(count);
+		$("#jg").html("Child分级 A.预期寿命 : 15-20 年.腹部手术围手术期病死率: 10%.");
+	}else if(count>7&&count<9){
+		$("#jieguo").val(count);
+		$("#jg").html("Child分级 B.进行移植评价的适应证.腹部手术围手术期病死率: 30%.");
+	}else if(count>10){
+		$("#jieguo").val(count);
+		$("#jg").html("Child分级 C.预期寿命: 1-3 年.腹部手术围手术期病死率: 82%.");
+	}
+	
+}
+
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">肝硬化死亡率的Child-Pugh评分</h3>
+      	<dl>
+				<dt>总胆红素</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box1" onclick="countChoices(this)">小于2 mg/dL +1</li>
+						<li><input type="checkbox" name="box2" onclick="countChoices(this)">2-3 mg/dL (34-50 µmol/L) +2</li>
+						<li><input type="checkbox" name="box3" onclick="countChoices(this)">>3 mg/dL (>50 µmol/L) +3</li>
+						
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>白蛋白</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box4" onclick="countChoices(this)">大于3.5 g/dL (>35 g/L) +1</li>
+						<li><input type="checkbox" name="box5" onclick="countChoices(this)">2.8-3.5 g/dL (28-35 g/L) +2</li>
+						<li><input type="checkbox" name="box6" onclick="countChoices(this)">小于2.8 g/dL +3</li>
+						
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>国际标准化比率</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box7" onclick="countChoices(this)">小于1.7 +1</li>
+						<li><input type="checkbox" name="box8" onclick="countChoices(this)">1.7-2.2  +2</li>
+						<li><input type="checkbox" name="box9" onclick="countChoices(this)">大于2.2 +3</li>
+						
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>腹水</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box10" onclick="countChoices(this)">无腹水 +1</li>
+						<li><input type="checkbox" name="box11" onclick="countChoices(this)">能够控制的腹水 +2</li>
+						<li><input type="checkbox" name="box12" onclick="countChoices(this)">难以控制的腹水 +3</li>
+						
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>脑病</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box13" onclick="countChoices(this)">无脑病  +1</li>
+						<li><input type="checkbox" name="box14" onclick="countChoices(this)">能够控制的脑病  +2</li>
+						<li><input type="checkbox" name="box15" onclick="countChoices(this)">难以控制的脑病 +3</li>
+						
+					</ul>
+				</dd>
+				
+		</dl>
+		<div class="jieguo">评分：<input type="text" id="jieguo"></div>
+		<div id="jg" style="width: 400px;height: 50px;background-color: #ccc;">
+			</div>
+		<div style="width: 400px;background-color: #ccc">Child-Pugh分级标准是一种临床上常用的用以对肝硬化患者的肝脏储备功能进行量化评估的分级标准，该标准最早由Child于1964年提出，当时Child将患者5个指标（包括一般状况、腹水、血清胆红素、
+			血清白蛋白浓度及凝血酶原时间）的不同状态分为三个层次，分别记以1分，2分和3分，并将5个指标计分进行相加，总和最低分为5分，最高分为15分，从而根据该总和的多少将肝脏储备功能分为A、B、C三级，
+			预示着三种不同严重程度的肝脏损害（分数越高，肝脏储备功能越差）。但由于患者的一般状况项常常不易计分，随后Pugh提出用肝性脑病的有无及其程度代替一般状况，即如今临床常用的Child-Pugh改良分级法</div>
+      </form>
+</body>
+</html>

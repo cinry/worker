@@ -1,0 +1,67 @@
+﻿<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NYHA心功能分级</title>
+	 <script src="jquery-2.1.3.js" type="text/javascript"></script>
+	<script>
+	function countChoices(obj) {
+
+		box1 = document.getElementsByName("box1")[0].checked;
+		box2 = document.getElementsByName("box1")[1].checked;
+		box3 = document.getElementsByName("box1")[2].checked;
+		box4 = document.getElementsByName("box1")[3].checked;
+		
+	if(box1){
+		$("#jieguo").val("1");
+	}else if(box2){
+		$("#jieguo").val("2");
+	}else if(box3){
+		$("#jieguo").val("3");
+	}else if(box4){
+		$("#jieguo").val("4");
+	}
+}
+
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<table>
+	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">NYHA心功能分级</h3>
+	<tr>	
+				<td>体征/症状：</td>    
+				
+			</tr> 
+			<tr>	
+				<td>无症状且日常活动不受限制，无步行、登楼后气短等</td>    
+				<td><input type="radio" name=box1 onClick="countChoices()"></td>
+			</tr> 
+			<tr>
+				<td>轻微症状（轻度气短和/或心绞痛），日常活动轻度受限</td>
+	             <td><input type="radio" name=box1 onClick="countChoices()"></td>
+	        </tr> 
+			<tr>
+				<td>日常活动明显受限，甚至在低于日常活动量的运动后，如短距离步行（20-100m）。休息后可缓解</td> 
+		        <td><input type="radio" name=box1 onClick="countChoices()"></td>
+		    </tr>
+			<tr>
+				<td>日常活动重度受限。甚至在休息时也出现症状。主要为卧床患者</td> 
+	            <td><input type="radio" name=box1 onClick="countChoices()"></td>
+	        </tr> 
+			
+			<tr><td>分级</td>  <td><input type="text" name=xianshi id="jieguo"/></td></tr>
+			<tr><td style="width: 400px;background-color: #ccc" colspan="2">Ⅰ级：患者有心脏病，但日常活动量不受限制，一般体力活动不引起过度疲劳、心悸、气喘或心绞痛。<br/>
+
+				Ⅱ级：心脏病患者的体力活动轻度受限制。休息时无自觉症状，一般体力活动引起过度疲劳、心悸、气喘或心绞痛。<br/>
+
+				Ⅲ级：患者有心脏病，以致体力活动明显受限制。休息时无症状，但小于一般体力活动即可引起过度疲劳、心悸、气喘或心绞痛。<br/>
+
+				Ⅳ级：心脏病患者不能从事任何体力活动，休息状态下也出现心衰症状，体力活动后加重。</td></tr>
+			  
+	</table>
+      </form>
+</body>
+</html>

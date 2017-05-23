@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>血管阻力</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(){
+				var xin=document.getElementById("xs").value;
+				var pingjun=document.getElementById("pj").value;
+				var feimao=document.getElementById("fq").value;
+				var tibi=document.getElementById("tb").value;
+				pvr=80*(pingjun-feimao)/xin;
+				pvri=80*(pingjun-feimao)/(xin/tibi);
+				if(pvr!==null){
+					$("#xhzl").val(pvr);
+					$("#xhzlzs").val(pvri);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form">
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">血管阻力</h3>
+				<tr>
+					<td>心输出量</td>
+					<td><input type="text" id="xs">L/min</td>
+				</tr>
+				<tr>
+					<td>平均肺动脉压</td>
+					<td><input type="text" id="pj">mmHg</td>
+				</tr>
+				<tr>
+					<td>肺毛细血管契压</td>
+					<td><input type="text" id="fq">mmHg</td>
+				</tr>
+				<tr>
+					<td>体表面积</td>
+					<td><input type="text" id="tb">㎡</td>
+				</tr>
+				<tr>
+					<td>肺循环阻力（PVR）</td>
+					<td><input type="text" value="点击查看" onclick="chakan()" id="xhzl"></td>
+				</tr>
+				<tr>
+					<td>肺循环阻力指数（PVRI）</td>
+					<td><input type="text" id="xhzlzs"</td>
+				</tr>
+				<tr><td style="width: 400px;background-color: #ccc" colspan="2">血管阻力即血液在 血管系统中流动时所受到的总的阻力，大部分发生在 小动脉，特别是微动脉。小动脉和微动脉收缩和舒张，
+					可显著地影响器官和组织中的血流量。正常血压的维持在一定程度上取决于外周血管小动脉和微动脉对血流产生的阻力，即 外周阻力。
+					又因它们位于毛细血管之前，所以又叫 毛细血管前阻力血管。</td></tr>
+				
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

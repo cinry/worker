@@ -1,0 +1,129 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>胰腺炎死亡率Ranson评分</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(obj){
+				
+				box1=obj.form.box1.checked;
+				box2=obj.form.box2.checked;
+				box3=obj.form.box3.checked;
+				box4=obj.form.box4.checked;
+				box5=obj.form.box5.checked;
+				box6=obj.form.box6.checked;
+				box7=obj.form.box7.checked;
+				box8=obj.form.box8.checked;	
+				box9=obj.form.box9.checked;	
+				box10=obj.form.box10.checked;	
+				box11=obj.form.box11.checked;
+				
+				count=(box1 ? 1:0)+(box2 ? 1:0)+(box3 ? 1:0)+(box4 ? 1:0)+(box5 ? 1:0)+(box6 ? 1:0)+(box7 ? 1:0)+(box8 ? 1:0)+(box9 ? 1:0)+(box10 ? 1:0)+(box11 ? 1 : 0);
+							
+				if(count==1||count==2){
+						$("#jieguo").val(count);
+						$("#jg").html("1% 的预期病死率");
+					}
+					if(count==3||count==4){
+						$("#jieguo").val(count);
+						$("#jg").html("15% 的预期病死率。");
+					}
+					if(count==5||count==6){
+						$("#jieguo").val(count);
+						$("#jg").html("40% 的预期病死率。");
+					}
+					if(count>7){
+						$("#jieguo").val(count);
+						$("#jg").html("100% 的预期病死率。");
+					}
+				
+		}
+		</script>
+	
+	</head>
+	<body>
+		<form name=form>
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">胰腺炎死亡率Ranson评分</h3>
+				<tr><td>入院时：</td></tr>
+				<tr>
+					<td>年龄>55?</td>
+					<td class="you"><input type="checkbox" onclick="chakan(this)" name=box11>是 +1</td>
+				</tr>
+				<tr>
+					<td>入院时白细胞计数 > 16?</td>
+					<td class="you"><input type="checkbox" onclick="chakan(this)" name=box1>是 +1</td>
+				</tr>
+				<tr>
+					<td>入院时葡萄糖 > 200 (US) > 10 (SI)?</td>
+					<td class="you"><input type="checkbox" onclick="chakan(this)" name=box2>是 +1</td>
+				</tr>
+				<tr>
+					<td>入院时乳酸脱氢酶 > 350?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box3>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>入院时谷丙转氨酶 > 250?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box4>是 +1
+					</td>
+				</tr>
+				<tr><td>入院后48小时：</td></tr>
+				<tr>
+					<td>入院48小时内红细胞压积下降 > 10%?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box5>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>入院48小时内尿素氮增高 > 5 US (> 1.79 SI)?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box6>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>入院48小时内Ca < 8 (US) < 2 (SI)?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this" name=box7>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>入院48小时内动脉氧分压 < 60?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box8>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>入院48小时内碱缺失 (24 - HCO3) > 4?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box9>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>入院48小时内液体需要量 > 6L?</td>
+					<td>
+						<input type="checkbox" onclick="chakan(this)" name=box10>是 +1
+					</td>
+				</tr>
+				
+				<tr>
+					<td>评分</td>
+					<td><input type="text" id="jieguo"></td>
+				</tr>
+				<tr>
+					
+					<td id="jg" style="width: 400px;height:50px;background-color: #ccc;" colspan="2"></td>
+				</tr>
+				
+				
+				
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>低白蛋白血症时钙浓度的校正</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(obj){
+				var xqgnd=document.getElementById("xqg").value;
+				var hzxdb=document.getElementById("xdb").value;
+				
+				if(xqgnd!==null){
+					var xuqiu=Math.round(parseInt(xqgnd)+parseInt(0.8*(4-hzxdb)));
+					$("#jg").val(xuqiu);
+				}
+				
+		}
+		</script>
+	</head>
+	<body>
+		<form name=form>
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">低白蛋白血症时钙浓度的校正</h3>
+				
+				<tr>
+					<td>血清钙浓度</td>
+					<td><input type="text" id="xqg">mmol/L</td>
+				</tr>
+				<tr>
+					<td>正常白蛋白水平</td>
+					<td><input type="text" value="4" id="zc">g/L</td>
+				</tr>
+				
+				<tr>
+					<td>患者白蛋白水平n</td>
+					<td><input type="text" id="xdb">g/L</td>
+				</tr>
+				
+				
+				<tr>
+					<td>校正后钙浓度</td>
+					<td>
+						<input type="text" id="jg" value="查看结果" onclick="chakan()">cells/µL
+						
+					</td>
+				</tr>
+				<tr><td style="width: 400px;background-color: #ccc">当血清白蛋白浓度在正常范围时，血钙低于2.2mmol/Ll(8.8mg/l) 正常值2.2~2.70 mmol/L，时称为低钙血症。
+					不同医院血钙化验参考值有小的差异，也有血钙低于2.1mmol/l(8.4mg/l)，正常值2.1~2.55 mmol/L，确定为低钙血症。
+					酸中毒或低蛋白血症时仅有蛋白结合钙降低，此时血钙低于正常，但离子钙不低，不发生临床症状；反之，碱中毒或高蛋白血症时，游离钙降低，
+					但蛋白结合钙增高，故血清钙仍可正常，也会发生低血钙临床症状，低蛋白血症时需要计算校正的钙浓度依此诊断低钙血症。</td></tr>
+			
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

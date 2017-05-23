@@ -1,0 +1,65 @@
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>蛛网膜下腔出血(SAH)的HUNT-HESS分级</title>
+	 <script src="jquery-2.1.3.js" type="text/javascript"></script>
+	<script>
+	function countChoices() {
+
+		box1 = document.getElementsByName("box1")[0].checked;
+		box2 = document.getElementsByName("box1")[1].checked;
+		box3 = document.getElementsByName("box1")[2].checked;
+		box4 = document.getElementsByName("box1")[3].checked;
+		box5 = document.getElementsByName("box1")[4].checked;
+	
+
+	if(box1){
+	$("#jieguo").val("1");
+	$("#jg").html("I等级患者死亡率大约为30%");
+	
+}else if(box2){
+	$("#jieguo").val("2");
+	$("#jg").html("II等级患者死亡率大约为40%");
+}else if(box3){
+	$("#jieguo").val("3");
+	$("#jg").html("III等级患者死亡率大约为50%");
+}else if(box4){
+	$("#jieguo").val("4");
+	$("#jg").html("IV等级患者死亡率大约为80%");
+}else if(box5){
+	$("#jieguo").val("5");
+	$("#jg").html("V等级患者死亡率大约为90%");
+}
+}
+
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<table>
+	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">蛛网膜下腔出血(SAH)的HUNT-HESS分级</h3>
+		
+			<tr>
+	             <td><input type="radio" name="box1" onclick="countChoices()">轻度头痛，警觉，有定向能力，轻度颈项强直</td>
+	        </tr> 
+			<tr>
+		        <td><input type="radio" name="box1" onclick="countChoices()">颈项强直，中重度头痛，警觉，有定向能力，无神经功能缺失（除颅神经瘫痪外）</td>
+		    </tr>
+			<tr>
+	            <td><input type="radio" name="box1" onclick="countChoices()">嗜睡或有意识模糊，轻度神经系统局灶体征</td>
+	        </tr> 
+			<tr>
+                <td><input type="radio" name="box1" onclick="countChoices()">昏迷，中度以上神经系统局灶体征</td>
+             </tr>
+             <tr>
+                <td><input type="radio" name="box1" onclick="countChoices()">深昏迷，严重神经功能损害的体征（如：去脑强直）</td>
+             </tr>
+			<tr><td>结果</td><td><input type="text" name=xianshi id="jieguo"/></td></tr>
+			 <tr><td style="width: 200px;height:50px;background-color: #ccc" id="jg" colspan="2"></td></tr>
+	</table>
+      </form>
+</body>
+</html>

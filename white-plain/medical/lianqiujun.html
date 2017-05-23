@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>链球菌咽炎的修正Centor 评分</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(obj){
+				    box1 = obj.form.box1.checked;
+					box2 = obj.form.box2.checked;
+					box3 = obj.form.box3.checked;
+					box4 = obj.form.box4.checked;
+					box5 = obj.form.box5.checked;
+					box6 = obj.form.box7.checked;
+					box7 = obj.form.box6.checked;
+					
+					count = (box1 ? 1 : 0) + (box2 ? 0 : 0) + (box3 ? -1 : 0)+(box4 ? 1:0)+(box5 ? 1:0)+(box6 ? 1:0)+(box7 ? 1:0);
+					
+  					 if(count==-1){
+  					 	$("#knx").val("1% - 2.5%");
+  					 	$("#jg").html("分数=-1，无需进一步检查或应用抗生素");
+  					 }
+  					 if(count==0){
+  					 	$("#knx").val("1% - 2.5%");
+  					 	$("#jg").html("分数=0，无需进一步检查或应用抗生素");
+  					 }
+  					 if(count==1){
+  					 	$("#knx").val("5% - 10%");
+  					 	$("#jg").html("分数=1，无需进一步检查或应用抗生素");
+  					 }
+  					 if(count==2){
+  					 	$("#knx").val("11% - 17%");
+  					 	$("#jg").html("分数=2，进行培养，仅对培养结果阳性者应用抗生素.");
+  					 }
+  					  if(count==3){
+  					  	$("#knx").val("28% - 35%");
+  					 	$("#jg").html("分数=3，进行培养，仅对培养结果阳性者应用抗生素.");
+  					 }
+  					  if(count==4){
+  					  	$("#knx").val("51% - 53%");
+  					 	$("#jg").html("分数=4，应用抗生素进行经验性治疗，进行或不进行培养");
+  					 }
+  					 if(count==5){
+  					 	$("#knx").val("51% - 53%");
+  					 	$("#jg").html("分数=5，应用抗生素进行经验性治疗，进行或不进行培养");
+  					 }
+  					 
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form">
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">链球菌咽炎的修正Centor 评分</h3>
+				<tr>
+					<td>患者年龄范围（<2岁不适用</td>
+					<td><input type="checkbox" id="n1" onclick="chakan(this)" name=box1>3-14岁  +1
+					<input type="checkbox" id="n2" onclick="chakan(this)" name=box2>15-44岁  +0
+					<input type="checkbox" id="n3" onclick="chakan(this)" name=box3>≥45岁  -1</td>
+				</tr>
+				<tr>
+					<td>扁桃体肿胀或有渗出液?</td>
+					<td><input type="checkbox" id="bt" onclick="chakan(this)" name=box4>是 +1</td>
+				</tr>
+				<tr>
+					<td>颈前淋巴结触痛 / 肿大?</td>
+					<td><input type="checkbox" onclick="chakan(this)" name=box5 id="jqlb">是 +1</td>
+				</tr>
+				<tr>
+					<td>发热?（T > 38° C, 100.4° F）</td>
+					<td><input type="checkbox" onclick="chakan(this)" name=box6 id="fr">是 +1</td>
+				</tr>
+				
+				<tr>
+					<td>咳嗽消失?</td>
+					<td><input type="checkbox" onclick="chakan(this)" name=box7 id="ks">是 +1</td>
+				</tr>
+				<tr>
+					<td>患链球菌咽炎的可能性</td>
+					<td><input type="text" id="knx"></td>
+				</tr>
+				<tr><td style="width: 300px;height: 30px;background-color: #ccc" id="jg" colspan="2"></td></tr>
+				<tr><td style="width: 400px;background-color: #ccc" colspan="2">链球菌咽喉炎是发生在喉咙的传染性细菌感染。预计每年有约3000万人被诊断出患有这个病。每个人都有可能被感染，
+					但儿童和免疫力低下的人比健康的成人更容易得病。只有去医院接受专业的检查才能确诊。不过，在约见医生前，你可以学会识别链球菌咽喉炎的相关症状。</td></tr>
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

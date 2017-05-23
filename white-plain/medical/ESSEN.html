@@ -1,0 +1,83 @@
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ESSEN评分</title>
+	 <script src="jquery-2.1.3.js" type="text/javascript"></script>
+	<script>
+	function countChoices(obj) {
+
+		box1 = obj.form.box1.checked;
+		box2 = obj.form.box2.checked;
+		box3 = obj.form.box3.checked;
+		box4 = obj.form.box4.checked;
+		box5 = obj.form.box5.checked;
+		box6 = obj.form.box6.checked;
+		box7 = obj.form.box7.checked;
+		box8 = obj.form.box8.checked;
+		box9 = obj.form.box9.checked;
+		box10 = obj.form.box10.checked;
+	
+
+	count=(box1 ? 0 : 0)+(box2 ? 1 : 0)+(box3 ? 2 : 0)+(box4 ? 1 : 0)+(box5 ? 1 : 0)+(box6 ? 1 : 0)+(box7 ? 1 : 0)+(box8 ? 1 : 0)+(box9 ? 1 : 0)+(box10 ? 1 : 0);
+	if(count!==null){
+	$("#jieguo").val(count);
+	
+}
+
+}
+
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<table>
+	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">ESSEN评分</h3>
+			<tr>
+				<th>危险因素</th>
+				<th>评分</th>
+			</tr>
+			<tr>	
+				<td>年龄</td>    
+				<td><input type="checkbox" name=box1 onclick="countChoices(this)"><65岁  +0
+					<input type="checkbox" name="box2" onclick="countChoices(this)">65-75 +1
+					<input type="checkbox" name="box3" onclick="countChoices(this)">>65岁 +2	
+				</td>
+			</tr> 
+			<tr>
+				<td>高血压</td>
+	             <td><input type="checkbox" name=box4 onclick="countChoices(this)">是+1</td>
+	        </tr> 
+			<tr>
+				<td>糖尿病</td> 
+		        <td><input type="checkbox" name=box5 onclick="countChoices(this)">是+1</td>
+		    </tr>
+			<tr>
+				<td>既往心肌梗死</td> 
+	            <td><input type="checkbox" name=box6 onclick="countChoices(this)">是+1</td>
+	        </tr> 
+			<tr>
+				<td>其他心脏病（除外心肌梗死和心房颤动）</td> 
+                <td><input type="checkbox" name=box7 onclick="countChoices(this)">是+1</td>
+             </tr>
+             <tr>
+				<td>周围血管疾病</td> 
+                <td><input type="checkbox" name=box8 onclick="countChoices(this)">是+1</td>
+             </tr>
+             <tr>
+				<td>吸烟</td> 
+                <td><input type="checkbox" name=box9 onclick="countChoices(this)">是+1</td>
+             </tr>
+             <tr>
+				<td>既往TIA或缺血性卒中病史</td> 
+                <td><input type="checkbox" name=box10 onclick="countChoices(this)">是+1</td>
+             </tr>
+            
+			<tr><td>结果</td>  <td><input type="text" name=xianshi id="jieguo"/></td></tr>
+			 <tr><td style="width: 300px;background-color: #ccc;" colspan="2">评价：7-9分：为极高危组；<br/>       3-6分：为高危组；<br/>       0-2分：为低危组<br/></td></tr>
+	</table>
+      </form>
+</body>
+</html>

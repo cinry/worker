@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>小儿气管插管的管道规则</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(){
+				var nian=document.getElementById("nl").value;
+				var wtn=nian/4+4;
+				var ytn=nian/4+3;
+				if(nian!==null){
+					$("#wt").val(wtn);
+					$("#yt").val(ytn);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form">
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">小儿气管插管的管道规则</h3>
+				<tr>
+					<td>患者年龄</td>
+					<td><input type="text" id="nl">岁</td>
+				</tr>
+				<tr>
+					<td>预计无套囊插管尺寸</td>
+					<td><input type="text" id="wt" value="点击查看" onclick="chakan()">mm tube</td>
+				</tr>
+				<tr>
+					<td>预计套囊插管尺寸</td>
+					<td><input type="text" value="点击查看" onclick="chakan()" id="yt">mm tube</td>
+				</tr>
+				<tr><td style="width: 400px;background-color: #ccc" colspan="2">在小儿气管内麻醉中,气管导管的管理不当是产生有关并发症和死亡的主要因素。术中气管导管脱出或插管过深部可产生严重后果。因此,正确估计置管深度是至关重要的。</td></tr>
+				
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

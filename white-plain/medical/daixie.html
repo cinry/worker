@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>代谢性酸中毒代偿的Winters计算公式</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(){
+				var nian=document.getElementById("nl").value;
+			
+				if(nian!==null){
+					var xuqiu=parseInt(1.5*nian)+parseInt(8);
+					$("#jg").val(xuqiu);
+				}
+				
+		}
+		</script>
+	</head>
+	<body>
+		<form name=form>
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">代谢性酸中毒代偿的Winters计算公式</h3>
+				
+				
+				<tr>
+					<td>动脉血气测得 HCO3-</td>
+					<td><input type="text" id="nl">mmol/L</td>
+				</tr>
+	
+				<tr>
+					<td>预计代偿 pCO2</td>
+					<td>
+						<input type="text" id="jg" value="查看结果" onclick="chakan()">mmHg
+						
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 400px;background-color: #ccc;" colspan="2">代偿性代谢性酸中毒，当机体出现代谢性酸中毒时，机体通过血液缓冲，细胞组织内外离子交换，肺和肾代偿作用，使得血浆NaHCO3含量有所回升，H2CO3含量代偿性降低，致使NaHCO3/H2CO3的比值及pH值又得以维持正常的现象。</td>
+				</tr>
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

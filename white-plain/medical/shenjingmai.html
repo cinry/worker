@@ -1,0 +1,138 @@
+﻿<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>深静脉血栓（DVT）Well评分</title>
+	 <script src="jquery-2.1.3.js" type="text/javascript"></script>
+	<script>
+	function countChoices(obj) {
+
+		box1 = obj.form.box1.checked;
+		box2 = obj.form.box2.checked;
+		box3 = obj.form.box3.checked;
+		box4 = obj.form.box4.checked;
+		box5 = obj.form.box5.checked;
+		box6 = obj.form.box6.checked;
+		box7 = obj.form.box7.checked;
+		box8 = obj.form.box8.checked;
+		box9 = obj.form.box9.checked;
+		box10 = obj.form.box10.checked;
+		
+
+	count=(box1 ? 1 : 0)+(box2 ? 1 : 0)+(box3 ? 1 : 0)+(box4 ? 1 : 0)+(box5 ? 1 : 0)+(box6 ? 1 : 0)+(box7 ? 1 : 0)+(box8 ? 1 : 0)+(box9 ? 1 : 0)+(box10 ? -2 : 0);
+	if(count==0){
+	$("#jieguo").val(count);
+	$("#jg").html("DVT低危人群。根据Well的DVT研究 '不可能'.");
+}
+	if(count==1){
+		$("#jieguo").val(count);
+		$("#jg").html("DVT低危人群。根据Well的DVT研究 '不可能'.");
+	}
+	if(count==2){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==3){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==4){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==5){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==6){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==7){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==8){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+	if(count==9){
+		$("#jieguo").val(count);
+	$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+}
+function selectAll(){
+	var a = document.getElementsByTagName("input");
+	if(a[0].checked){
+		for(var i = 0;i<a.length;i++){
+			if(a[i].type == "checkbox") a[i].checked = false;
+			$("#jieguo").val(count);
+				$("#jg").html("DVT低危人群。根据Well的DVT研究 '不可能'.");
+	}
+}
+	else{
+		for(var i = 0;i<a.length;i++){
+			if(a[i].type == "checkbox") a[i].checked = true;
+			$("#jieguo").val(count);
+				$("#jg").html("DVT高危人群。根据Well的DVT研究 '可能'");
+}
+}
+}
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<table>
+	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">深静脉血栓（DVT）Well评分</h3>
+			<tr>	
+				<td>肿瘤活动期?</td>    
+				<td><input type=checkbox name=box1 onClick="countChoices(this)"></td>
+			</tr> 
+			<tr>
+				<td>近期卧床 >3天 或 4周内行大手术?</td>
+	             <td><input type=checkbox name=box2 onClick="countChoices(this)"></td>
+	        </tr> 
+			<tr>
+				<td>与对侧相比，小腿肿胀 >3cm?</td> 
+		        <td><input type=checkbox name=box3 onClick="countChoices(this)"></td>
+		    </tr>
+			<tr>
+				<td>同侧浅表静脉显露（非静脉曲张）?</td> 
+	            <td><input type=checkbox name=box4 onClick="countChoices(this)"></td>
+	        </tr> 
+			<tr>
+				<td>整个下肢肿胀?</td> 
+                <td><input type=checkbox name=box5 onClick="countChoices(this)"></td>
+             </tr>
+             <tr>
+				<td>沿深静脉走行局限性压痛?</td> 
+                <td><input type=checkbox name=box6 onClick="countChoices(this)"></td>
+             </tr>
+             <tr>
+				<td>可凹性水肿，有症状侧下肢更重?</td> 
+                <td><input type=checkbox name=box7 onClick="countChoices(this)"></td>
+             </tr>
+             <tr>
+				<td>麻痹、轻瘫、近期行下肢石膏固定术?</td> 
+                <td><input type=checkbox name=box8 onClick="countChoices(this)"></td>
+             </tr>
+             <tr>
+				<td>先前已记录的DVT?</td> 
+                <td><input type=checkbox name=box9 onClick="countChoices(this)"></td>
+             </tr>
+             <tr>
+				<td>除DVT外的其他病因诊断为可能或很可能?</td> 
+                <td><input type=checkbox name=box10 onClick="countChoices(this)"></td>
+             </tr>
+             
+			<tr><td><input type="button" name="select" onclick="selectAll()" value="全选/全不选"/></td></tr>
+			<tr><td>结果</td>  <td><input type="text" name=xianshi id="jieguo"/></td></tr>
+			  <tr><td class="ab" name=xianshi id="jg" style="width:300px;height:50px;background-color:#ccc" colspan="2"></td></tr>
+			  <tr><td style="width: 400px;background-color: #ccc" colspan="2">DVT 深静脉血栓（Deep Vein Thrombosis DVT )，DVT是在某一条深静脉中出现了血液凝块，血液的正常流动受阻。DVT通常出现在下肢，如骨盆、大腿和小腿，
+			  	于是把下肢DVT又分为：小腿DVT和髂—股DVT。小腿DVT多数症状较轻，主要表现为小腿部疼痛和轻度肿胀，足背屈曲或压迫小腿背部肌肉时出现疼痛，经适当治疗一般可消融或自溶。</td></tr>
+	</table>
+      </form>
+</body>
+</html>

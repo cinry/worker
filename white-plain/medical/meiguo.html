@@ -1,0 +1,322 @@
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>美国国立卫生研究院卒中量表</title>
+	 <script src="jquery-2.1.3.js" type="text/javascript"></script>
+	<script>
+	function countChoices(obj) {
+
+		box1 = obj.form.box1.checked;
+		box2 = obj.form.box2.checked;
+		box3 = obj.form.box3.checked;
+		box4 = obj.form.box4.checked;
+		box5 = obj.form.box5.checked;
+		box6 = obj.form.box6.checked;
+		box7 = obj.form.box7.checked;
+		box8 = obj.form.box8.checked;
+		box9 = obj.form.box9.checked;
+		box10 = obj.form.box10.checked;
+		box11 = obj.form.box11.checked;
+		box12 = obj.form.box12.checked;
+		box13 = obj.form.box13.checked;
+		box14 = obj.form.box14.checked;
+		box15 = obj.form.box15.checked;
+		box16 = obj.form.box16.checked;
+		box17 = obj.form.box17.checked;
+		box18 = obj.form.box18.checked;
+		box19 = obj.form.box19.checked;
+		box20 = obj.form.box20.checked;
+		box21 = obj.form.box21.checked;
+		box22 = obj.form.box22.checked;
+		box23 = obj.form.box23.checked;
+		box24 = obj.form.box24.checked;
+		
+		box25 = obj.form.box25.checked;
+		box26 = obj.form.box26.checked;
+		box27 = obj.form.box27.checked;
+		box28 = obj.form.box28.checked;
+		box29 = obj.form.box29.checked;
+		box30 = obj.form.box30.checked;
+		box31 = obj.form.box31.checked;
+		box32 = obj.form.box32.checked;
+		box33 = obj.form.box33.checked;
+		box34 = obj.form.box34.checked;
+		box35 = obj.form.box35.checked;
+		box36 = obj.form.box36.checked;
+		box37 = obj.form.box37.checked;
+		box38 = obj.form.box38.checked;
+		box39 = obj.form.box39.checked;
+		box40 = obj.form.box40.checked;
+		box41 = obj.form.box41.checked;
+		box42 = obj.form.box42.checked;
+		box43 = obj.form.box43.checked;
+		box44 = obj.form.box44.checked;
+		box45 = obj.form.box45.checked;
+		box46 = obj.form.box46.checked;
+		
+		box47 = obj.form.box47.checked;
+		box48 = obj.form.box48.checked;
+		box49 = obj.form.box49.checked;
+		box50 = obj.form.box50.checked;
+		box51 = obj.form.box51.checked;
+		box52 = obj.form.box52.checked;
+		box53 = obj.form.box53.checked;
+		box54 = obj.form.box54.checked;
+		box55 = obj.form.box55.checked;
+		box56 = obj.form.box56.checked;
+		box57 = obj.form.box57.checked;
+		box58 = obj.form.box58.checked;
+		box59 = obj.form.box59.checked;
+		box60 = obj.form.box60.checked;
+		box61 = obj.form.box61.checked;
+		box62 = obj.form.box62.checked;
+		box63 = obj.form.box63.checked;
+		box64 = obj.form.box64.checked;
+		box65 = obj.form.box65.checked;
+		box66 = obj.form.box66.checked;
+		box67 = obj.form.box67.checked;
+		box68 = obj.form.box68.checked;
+		box69 = obj.form.box69.checked;
+		box70 = obj.form.box70.checked;
+		box71 = obj.form.box71.checked;
+		box72 = obj.form.box72.checked;
+		box73 = obj.form.box73.checked;
+		box74 = obj.form.box74.checked;
+		box75 = obj.form.box75.checked;
+		box76 = obj.form.box76.checked;
+		box77 = obj.form.box77.checked;
+		box78 = obj.form.box78.checked;
+		box79 = obj.form.box79.checked;
+		box80 = obj.form.box80.checked;
+		box81 = obj.form.box81.checked;
+		box82 = obj.form.box82.checked;
+	
+	count=(box1 ? 0 :0)+(box2 ? 1 :0)+(box3 ? 2 :0)+(box4 ? 2 :0)+(box5 ? 3 : 0)+(box6 ? 0 : 0)+(box7 ? 1 : 0)+(box8 ? 2 : 0)+(box9 ? 1 : 0)+(box10 ? 2 : 0)+(box11 ? 2 : 0)+(box12 ? 2 : 0)+(box13 ? 2 : 0)+(box14 ? 0 : 0)
+	+(box15 ? 1 :0)+(box16 ? 1 :0)+(box17 ? 2 :0)+(box18 ? 0 :0)+(box19 ? 1 : 0)+(box20 ? 2 : 0)+(box21 ? 2 : 0)+(box22 ? 3 : 0)+(box23 ? 0 : 0)+(box24 ? 1 : 0)+(box25 ? 2 : 0)+(box26 ? 3 : 0)+(box27 ? 3 : 0)+(box28 ? 0 : 0)
+	+(box29 ? 1 :0)+(box30 ? 2 :0)+(box31 ? 2 :0)+(box32 ? 3 :0)+(box33 ? 4 : 0)+(box34 ? 0 : 0)+(box35 ? 0 : 0)+(box36 ? 1 : 0)+(box37 ? 2 : 0)+(box38 ? 2 : 0)+(box39 ? 3 : 0)+(box40 ? 4 : 0)+(box41 ? 0 : 0)+(box42 ? 0 : 0)
+	+(box43 ? 1 :0)+(box44 ? 2 :0)+(box45 ? 2 :0)+(box46 ? 3 :0)+(box47 ? 4 : 0)+(box48 ? 0 : 0)+(box49 ? 0 : 0)+(box50 ? 1 : 0)+(box51 ? 2 : 0)+(box52 ? 2 : 0)+(box53 ? 3 : 0)+(box54 ? 4 : 0)+(box55 ? 0 : 0)+(box56 ? 0 : 0)
+	+(box57 ? 1 :0)+(box58 ? 2 :0)+(box59 ? 0 :0)+(box60 ? 0 :0)+(box61 ? 0 : 0)+(box62 ? 0 : 0)+(box63 ? 1 : 0)+(box64 ? 1 : 0)+(box65 ? 2 : 0)+(box66 ? 2 : 0)+(box67 ? 2 : 0)+(box68 ? 0 : 0)+(box69 ? 1 : 0)+(box70 ? 2 : 0)
+	+(box71 ? 3 :0)+(box72 ? 3 :0)+(box73 ? 0 :0)+(box74 ? 1 :0)+(box75 ? 2 : 0)+(box76 ? 2 : 0)+(box77 ? 0 : 0)+(box78 ? 0 : 0)+(box79 ? 1 : 0)+(box80 ? 1 : 0)+(box81 ? 2 : 0)+(box82 ? 2 : 0);
+	
+	if(count!==null){
+		
+		$("#jieguo").val(count);
+	}
+}
+
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">美国国立卫生研究院卒中量表</h3>
+      	<h3>注意： 国立卫生研究院卒中要求你了解 神经病学检查 以及其中隐含的规则；如果您的患者有任何之前确诊的神经病学缺陷（虚弱，半身瘫痪或四肢瘫痪，失明等），这样情况就会相当复杂，你应该查询一下NIH卒中量表的网站。该软件竭力为您解除困惑，但是不能替代官方治疗方案。</h3>
+      	<dl>
+				<dt>1A: 意识水平(如果因插管治疗或其他治疗，无法全面评价，也必须选择一个；只有在伤害性刺激不能引起患者的（除反射性体位以外的）任何活动时，才能记3分)</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box1" onclick="countChoices(this)">清醒，反应敏捷 0</li>
+						<li><input type="checkbox" name="box2" onclick="countChoices(this)">不清醒，轻微刺激能唤醒 1</li>
+						<li><input type="checkbox" name="box3" onclick="countChoices(this)">不清醒，需要反复刺激才有注意 2</li>
+						<li><input type="checkbox" name="box4" onclick="countChoices(this)">不清醒/反应迟钝，需要疼痛的刺激才有活动 2</li>
+						<li><input type="checkbox" name="box5" onclick="countChoices(this)">植物效应或对疼痛无反应 3</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>1B:询问患者当前月份和年龄</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box6" onclick="countChoices(this)">两个问题回答均正确 0</li>
+						<li><input type="checkbox" name="box7" onclick="countChoices(this)">一个问题回答正确 1</li>
+						<li><input type="checkbox" name="box8" onclick="countChoices(this)">两个问题回答均不正确 2</li>
+						<li><input type="checkbox" name="box9" onclick="countChoices(this)">构音障碍，气管插管，口腔气管创伤，语言障碍 1</li>
+						<li><input type="checkbox" name="box10" onclick="countChoices(this)">患失语症的 2</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>1C:让患者睁眼闭眼，然后紧紧握拳（如果有语言障碍/意识混乱者使用另一种指令代替/手势）</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box11" onclick="countChoices(this)">50岁 +2</li>
+						<li><input type="checkbox" name="box12" onclick="countChoices(this)">50岁 +2</li>
+						<li><input type="checkbox" name="box13" onclick="countChoices(this)">50岁 +2</li>
+						
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>2：测试水平眼球运动</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box14" onclick="countChoices(this)">正常眼球运动 0</li>
+						<li><input type="checkbox" name="box15" onclick="countChoices(this)">部分性凝视麻痹：可以克服 1</li>
+						<li><input type="checkbox" name="box16" onclick="countChoices(this)">部分性凝视麻痹：能被眼脑反射克服 1</li>
+						<li><input type="checkbox" name="box17" onclick="countChoices(this)">部分性凝视麻痹：不可以克服 2</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>3:视野检测</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box18" onclick="countChoices(this)">无视野缺损 0</li>
+						<li><input type="checkbox" name="box19" onclick="countChoices(this)">部分偏盲 1</li>
+						<li><input type="checkbox" name="box20" onclick="countChoices(this)">完全偏盲 2</li>
+						<li><input type="checkbox" name="box21" onclick="countChoices(this)">患者全盲 3</li>
+						<li><input type="checkbox" name="box22" onclick="countChoices(this)">双侧偏盲 3</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>4:面瘫检测（如反应迟钝要求患者示齿，扬眉和闭眼）</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box23" onclick="countChoices(this)">正常对称运动 0</li>
+						<li><input type="checkbox" name="box24" onclick="countChoices(this)">轻微瘫痪（鼻唇沟变平，微笑时不对称） 1</li>
+						<li><input type="checkbox" name="box25" onclick="countChoices(this)">部分瘫痪（下面部完全或几乎完全瘫痪） 2</li>
+						<li><input type="checkbox" name="box26" onclick="countChoices(this)"> 一侧完全瘫痪（上下面部运动消失） 3</li>
+						<li><input type="checkbox" name="box27" onclick="countChoices(this)">双侧完全瘫痪（上下面部运动消失） 3</li>
+					</ul>
+				</dd>
+				
+		</dl>
+			<dl>
+				<dt>5A：左臂运动</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box28" onclick="countChoices(this)">坚持10秒钟无漂移 0</li>
+						<li><input type="checkbox" name="box29" onclick="countChoices(this)">漂移，不碰到床或其他支撑物 1</li>
+						<li><input type="checkbox" name="box30" onclick="countChoices(this)">漂移，碰到床或其他支撑物 2</li>
+						<li><input type="checkbox" name="box31" onclick="countChoices(this)">部分抵抗重力 2</li>
+						<li><input type="checkbox" name="box32" onclick="countChoices(this)">不能抵抗重力 3</li>
+						<li><input type="checkbox" name="box33" onclick="countChoices(this)">无运动 4</li>
+						<li><input type="checkbox" name="box34" onclick="countChoices(this)">截肢/关节融合 无</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>5B：右臂运动</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box35" onclick="countChoices(this)">坚持10秒钟无漂移 0</li>
+						<li><input type="checkbox" name="box36" onclick="countChoices(this)">漂移，不碰到床或其他支撑物 1</li>
+						<li><input type="checkbox" name="box37" onclick="countChoices(this)">漂移，碰到床或其他支撑物 2</li>
+						<li><input type="checkbox" name="box38" onclick="countChoices(this)">部分抵抗重力 2</li>
+						<li><input type="checkbox" name="box39" onclick="countChoices(this)">不能抵抗重力 3</li>
+						<li><input type="checkbox" name="box40" onclick="countChoices(this)">无运动 4</li>
+						<li><input type="checkbox" name="box41" onclick="countChoices(this)">截肢/关节融合 无</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>6A：左腿运动</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box42" onclick="countChoices(this)">坚持10秒钟无漂移 0</li>
+						<li><input type="checkbox" name="box43" onclick="countChoices(this)">漂移，不碰到床或其他支撑物 1</li>
+						<li><input type="checkbox" name="box44" onclick="countChoices(this)">漂移，碰到床或其他支撑物 2</li>
+						<li><input type="checkbox" name="box45" onclick="countChoices(this)">部分抵抗重力 2</li>
+						<li><input type="checkbox" name="box46" onclick="countChoices(this)">不能抵抗重力 3</li>
+						<li><input type="checkbox" name="box47" onclick="countChoices(this)">无运动 4</li>
+						<li><input type="checkbox" name="box48" onclick="countChoices(this)">截肢/关节融合 无</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>6B：右腿运动</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box49" onclick="countChoices(this)">坚持10秒钟无漂移 0</li>
+						<li><input type="checkbox" name="box50" onclick="countChoices(this)">漂移，不碰到床或其他支撑物 1</li>
+						<li><input type="checkbox" name="box51" onclick="countChoices(this)">漂移，碰到床或其他支撑物 2</li>
+						<li><input type="checkbox" name="box52" onclick="countChoices(this)">部分抵抗重力 2</li>
+						<li><input type="checkbox" name="box53" onclick="countChoices(this)">不能抵抗重力 3</li>
+						<li><input type="checkbox" name="box54" onclick="countChoices(this)">无运动 4</li>
+						<li><input type="checkbox" name="box55" onclick="countChoices(this)">截肢/关节融合 无</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>7：肢体共济失调</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box56" onclick="countChoices(this)">无共济失调  0</li>
+						<li><input type="checkbox" name="box57" onclick="countChoices(this)">一个肢体有 1</li>
+						<li><input type="checkbox" name="box58" onclick="countChoices(this)"> 两个肢体有 2</li>
+						<li><input type="checkbox" name="box59" onclick="countChoices(this)">不理解 0</li>
+						<li><input type="checkbox" name="box60" onclick="countChoices(this)">瘫痪 0</li>
+						<li><input type="checkbox" name="box61" onclick="countChoices(this)">截肢/关节融合 无</li>
+					</ul>
+				</dd>
+				
+		</dl>
+			<dl>
+				<dt>8：感觉</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box62" onclick="countChoices(this)">正常，无感觉缺失 0</li>
+						<li><input type="checkbox" name="box63" onclick="countChoices(this)">轻到中度感觉缺失：不尖锐/钝 1</li>
+						<li><input type="checkbox" name="box64" onclick="countChoices(this)">轻到中度感觉缺失：可以感觉到被触碰 1</li>
+						<li><input type="checkbox" name="box65" onclick="countChoices(this)">完全感觉缺失：根本无法感觉到被触碰 2</li>
+						<li><input type="checkbox" name="box66" onclick="countChoices(this)">无反应和四肢瘫痪 2</li>
+						<li><input type="checkbox" name="box67" onclick="countChoices(this)">昏迷/无反应 2</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>9：最佳语言/失语</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box68" onclick="countChoices(this)">无失语，正常 0</li>
+						<li><input type="checkbox" name="box69" onclick="countChoices(this)">轻到中度失语：一些明显变化，无明显受限 1</li>
+						<li><input type="checkbox" name="box70" onclick="countChoices(this)">重度失语：破碎的语言表达，听者需要推理，无法识读材料 2</li>
+						<li><input type="checkbox" name="box71" onclick="countChoices(this)">不能说话或完全失语：无言语或听理解能力 3</li>
+						<li><input type="checkbox" name="box72" onclick="countChoices(this)">昏迷/无反应 3</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>10:构音障碍</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box73" onclick="countChoices(this)">正常 0</li>
+						<li><input type="checkbox" name="box74" onclick="countChoices(this)">轻到中度：患者至少能含糊得念一些词，虽稍有困难但至少能被理解 1</li>
+						<li><input type="checkbox" name="box75" onclick="countChoices(this)">重度构音障碍：患者言语含糊以至无法理解，但无失语或与失语不成比例 2</li>
+						<li><input type="checkbox" name="box76" onclick="countChoices(this)">不能说话或构音不全 2</li>
+						<li><input type="checkbox" name="box77" onclick="countChoices(this)">气管插管或其他物理障碍 无</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<dl>
+				<dt>11:消退和不注意</dt>
+				<dd>
+					<ul>
+						<li><input type="checkbox" name="box78" onclick="countChoices(this)">无异常 0</li>
+						<li><input type="checkbox" name="box79" onclick="countChoices(this)">视觉/触觉/听觉/空间觉或自身的不注意 1</li>
+						<li><input type="checkbox" name="box80" onclick="countChoices(this)">双侧同步刺激时一种感觉形式的消退 1</li>
+						<li><input type="checkbox" name="box81" onclick="countChoices(this)">严重的偏侧不注意（如不认识自己的手） 2</li>
+						<li><input type="checkbox" name="box82" onclick="countChoices(this)">一种以上感觉形式的消退 2</li>
+					</ul>
+				</dd>
+				
+		</dl>
+		<div class="jieguo">NIH卒中量表：<input type="text" id="jieguo" value="点击查看"></div>
+      </form>
+</body>
+</html>

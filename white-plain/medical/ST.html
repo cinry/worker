@@ -1,0 +1,269 @@
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ST段抬高心肌梗塞的TIMI危险评分</title>
+	
+<body>
+ <form name="form">
+  <table>
+      <h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">ST段抬高心肌梗塞的TIMI危险评分</h3>
+      	<tr><td>输入手机号可查询上次结果：</td>
+      		<td><input type="text" name="cx" id="chax"/></td>
+      	</tr>	
+      	
+		<tr>
+			<td>年龄≥65?</td>	
+			<td>
+				<input type="radio" name=box1 onClick="countChoices(this)"> <65岁 +0<br/>
+				<input type="radio" name=box2 onClick="countChoices(this)"> 65-74岁 +2<br/>
+				<input type="radio" name=box3 onClick="countChoices(this)"> ≥75 +3<br/>
+			</td>
+		<tr>
+			<td>糖尿病 或 高血压 或 心绞痛?</td>			
+			<td><input type=checkbox name=box4 onClick="countChoices(this)">是+1</td>
+		</tr>
+		<tr>
+			<td>收缩压 < 100 mmHg?</td>     		
+			<td><input type=checkbox name=box5 onClick="countChoices(this)">是+3</td>
+		</tr>
+		<tr>
+			<td>心率 > 100 次/分? </td>            
+		    <td><input type=checkbox name=box6 onClick="countChoices(this)">是+2</td>
+		</tr>
+		<tr>
+			<td>Killip分级 II-IV?</td>      		
+			<td><input type=checkbox name=box7 onClick="countChoices(this)">是+2</td>
+		</tr> 
+		<tr>
+			<td>体重 < 67 kg (147.7 磅)?</td>      
+			<td><input type=checkbox name=box8 onClick="countChoices(this)">是+1</td>
+		</tr>
+		<tr>
+			<td>前壁ST段抬高或左束支传导阻滞?</td>       
+		    <td><input type=checkbox name=box9 onClick="countChoices(this)">是+1</td>
+		</tr>
+		<tr>
+			<td>治疗距发病时间 > 4 小时?</td>          
+		    <td><input type=checkbox name=box10 onClick="countChoices(this)">是+1</td>
+		</tr>
+		
+		
+		<tr>
+			<td>结果</td>  
+			<td><input type=text name=xianshi id="jg"/></td>
+		</tr>
+		<tr>
+			<td style="width: 300px;height: 30px;background-color: #ccc" id="xianshi" colspan="2"></td>
+		</tr>
+		<tr>
+			<td style="width: 400px;background-color: #ccc" colspan="2">ST段抬高型心肌梗死（STEMI）是指具有典型的缺血性胸痛，持续超过20min，血清心肌坏死标记物浓度升高并有动态演变，心电图具有典型的ST段抬高的一类急性心肌梗死。
+			STEMI病理基础主要是冠脉斑块损伤的基础上诱发急性闭塞性血栓，病理学形态研究证实ST段抬高型心肌梗死（STEMI）冠脉内含大量纤维蛋白的红色血栓，而NSTEMI为富含血小板的白色血栓。
+			这一点病理学形态改变具有非常重要的临床意义。正是因为者病理学形态不同，才导致了两者心电图改变不同，治疗手段不尽相同（药物溶栓适宜STEMI,但不宜用于NSTEMI）。
+			</td>
+	    </tr>
+	    <tr><td>你上次的查询结果是：</td><td id="lastTime"></td></tr>
+	</table>
+  </form>
+   <script src="jquery-2.1.3.js" type="text/javascript"></script>
+   <script src="../js/st.js" type="text/javascript"></script>
+   <script>
+   	function countChoices(obj) {
+
+		box1 = obj.form.box1.checked;
+		box2 = obj.form.box2.checked;
+		box3 = obj.form.box3.checked;
+		box4 = obj.form.box4.checked;
+		box5 = obj.form.box5.checked;
+		box6 = obj.form.box7.checked;
+		box7 = obj.form.box6.checked;
+		box8 = obj.form.box8.checked;
+		box9 = obj.form.box9.checked;
+		box10 = obj.form.box10.checked;
+		   try {
+	    
+        //if (!req.session.username || !req.cookies.username) throw "数据插入失败，登录失效";
+        var connection = await(pool.getConnection());
+			console.log("connection"); 
+			
+				connection.query("INSERT INTO clientbuy SET ?",client,function(err,result){
+					if(err){
+						errHandler.errHandler(err, res);	        			
+					}else{
+						errHandler.logger.info("第"+(i+1)+"句执行成功");
+					}
+				});	        					
+						   
+	        res.send({code:"000",status:"数据插入成功!"});
+	        res.end();
+    
+    } catch (err) {
+        errHandler.errHandler(err, res);
+    }
+    if (connection) pool.releaseConnection(connection);
+
+		count = (box1 ? 0 : 0) + (box2 ? 1 : 0) + (box3 ? 2 : 0)+(box4 ? 1:0)+(box5 ? 1:0)+(box6 ? 2:0)+(box7 ? 1:0)+(box8 ? 1:0)+(box9 ? 1:0)+(box10 ? 1:0);
+		if(box1){
+			if (count==0) {
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率0.8%.");
+			}
+			if(count==1){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率1.6%.");
+		}
+			if(count==2){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率2.2%.");
+		}
+			if(count==3){
+			 	$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率4.4%");
+		}
+			if(count==4){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率7.3%.");
+		}
+			if(count==5){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率12.4%.");
+		}
+			if(count==6){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率16.1%.");
+		}
+			if(count==7){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率16.1%.");
+		}
+			if(count==8){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率26.8%");
+		}
+			if(count==9){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==10){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==11){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+		}
+		
+		if(box2){
+			
+			if(count==2){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率2.2%.");
+		}
+			if(count==3){
+			 	$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率4.4%");
+		}
+			if(count==4){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率7.3%.");
+		}
+			if(count==5){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率12.4%.");
+		}
+			if(count==6){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率16.1%.");
+		}
+			if(count==7){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率16.1%.");
+		}
+			if(count==8){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率26.8%");
+		}
+			if(count==9){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==10){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==11){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==12){
+					$("#jg").val(count);
+					$("#xianshi").html("30天总死亡率35.9%.");
+			}
+			if(count==13){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+		}
+		if(box3){
+			
+			if(count==3){
+			 	$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率4.4%");
+		}
+			if(count==4){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率7.3%.");
+		}
+			if(count==5){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率12.4%.");
+		}
+			if(count==6){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率16.1%.");
+		}
+			if(count==7){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率16.1%.");
+		}
+			if(count==8){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率26.8%");
+		}
+			if(count==9){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==10){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==11){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+			if(count==12){
+					$("#jg").val(count);
+					$("#xianshi").html("30天总死亡率35.9%.");
+			}
+			if(count==13){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+		if(count==14){
+				$("#jg").val(count);
+				$("#xianshi").html("30天总死亡率35.9%.");
+		}
+		}
+		
+		
+		
+		
+		
+		
+		
+}
+  </script>
+</body>
+</html>

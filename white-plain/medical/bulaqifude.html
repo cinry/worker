@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>格拉斯哥-布拉奇福德出血评分</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(obj){
+				var xhdb=document.getElementById("tz").value;
+				var nsd=document.getElementById("sg").value;
+				var ssy=document.getElementById("gy").value;
+				var danbai=parseInt(xhdb);
+				var niaosu=parseInt(nsd);
+				var shousuo=parseInt(ssy);
+				box1=obj.form.box1.checked;
+				box2=obj.form.box2.checked;
+				box3=obj.form.box3.checked;
+				box4=obj.form.box4.checked;
+				box5=obj.form.box5.checked;
+				box6=obj.form.box6.checked;
+				
+				count=(box2 ? 1 : 0)+(box3 ? 1 : 0)+(box4 ? 2 : 0)+(box5 ? 2 : 0)+(box6 ? 2 : 0);
+				if(box1){
+					if(danbai>100&&danbai<119){
+						count+=1;
+						$("#jg").val(count);
+					}else if(danbai<100){
+						count+=6;
+						$("#jg").val(count);
+					}
+				}else{
+					if(danbai<100){
+						count+=6;
+						$("#jg").val(count);
+					}else if(danbai>100&&danbai<119){
+						count+=3;
+						$("#jg").val(count);
+					}else if(danbai>120&&danbai<129){
+						count+=1;
+						$("#jg").val(count);
+					}
+				}
+				if(niaosu>6.5&&niaosu<7.9){
+					count+=2;
+					$("#jg").val(count);
+				}else if(niaosu>8.0&&niaosu<9.9){
+					count+=3;
+					$("#jg").val(count);
+				}else if(niaosu>10.0&&niaosu<24.9){
+					count+=4;
+					$("#jg").val(count);
+				}else if(niaosu>=25.0){
+					count+=6;
+					$("#jg").val(count);
+				}
+				
+				if(shousuo<90){
+					count+=3;
+					$("#jg").val(count);
+				}else if(shousuo>91&&shousuo<99){
+					count+=2;
+					$("#jg").val(count);
+					
+				}else if(shousuo>100&&shousuo<109){
+					count+=1;
+					$("#jg").val(count);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form">
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">格拉斯哥-布拉奇福德出血评分</h3>
+				<tr>
+					<td>血红蛋白</td>
+					<td><input type="text" id="tz">g/L</td>
+				</tr>
+				<tr>
+					<td>尿素氮</td>
+					<td><input type="text" id="sg">mmol/L</td>
+				</tr>
+				<tr>
+					<td>初始收缩压</td>
+					<td><input type="text" id="gy">mm Hg</td>
+				</tr>
+				<tr>
+					<td>女患者？</td>
+					<td><input type="checkbox" name="box1" onclick="chakan(this)"></td>
+				</tr>
+				<tr>
+					<td>心率 ≥ 100？</td>
+					<td><input type="checkbox" name="box2" onclick="chakan(this)">是+1</td>
+				</tr>
+				<tr>
+					<td>患者有黑便？</td>
+					<td><input type="checkbox" name="box3" onclick="chakan(this)">是+1</td>
+				</tr>
+				<tr>
+					<td>患者有晕厥？</td>
+					<td><input type="checkbox" name="box4" onclick="chakan(this)">是+2</td>
+				</tr>
+				<tr>
+					<td>患者有肝脏疾病？</td>
+					<td><input type="checkbox" name="box5" onclick="chakan(this)">是+2</td>
+				</tr>
+				<tr>
+					<td>患者有心功能衰竭？</td>
+					<td><input type="checkbox" name="box6" onclick="chakan(this)">是+2</td>
+				</tr>
+				<tr>
+					<td>评分</td>
+					<td><input type="text" value="点击查看" onclick="chakan()" id="jg">mmol/L</td>
+				</tr>
+				<tr><td style="width: 300px;background-color: #ccc" colspan="2">研究指出，在患者入院时，根据GBS评分，对上消化道出血患者再出血危险性进行评估，实施危险度的分级护理，能降低患者再出血率，护理满意度高</td></tr>
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

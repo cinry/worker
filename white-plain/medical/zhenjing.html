@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>镇静-躁动评分</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(){
+				
+				box1=document.getElementsByName("box1")[0].checked;
+				box2=document.getElementsByName("box1")[1].checked;
+				box3=document.getElementsByName("box1")[2].checked;
+				box4=document.getElementsByName("box1")[3].checked;
+				box5=document.getElementsByName("box1")[4].checked;
+				box6=document.getElementsByName("box1")[5].checked;
+				box7=document.getElementsByName("box1")[6].checked;
+			
+							
+				if(box1){
+						$("#jieguo").val("1");
+					}else if(box2){
+						$("#jieguo").val("2");
+					}else if(box3){
+						$("#jieguo").val("3");
+						
+					}else if(box4){
+						$("#jieguo").val("4");
+					}else if(box5){
+						$("#jieguo").val("5");
+					}else if(box6){
+						$("#jieguo").val("6");
+					}else if(box7){
+						$("#jieguo").val("7");
+					}
+			
+		}
+		</script>
+	
+	</head>
+	<body>
+		<form name=form>
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">镇静-躁动评分</h3>
+				<tr><td>体征/症状：</td></tr>
+				<tr>
+					<td>不能唤醒。对恶性刺激无或仅有轻微反应?</td>
+					<td class="you"><input type="radio" onclick="chakan()" name=box1>是 +1</td>
+				</tr>
+				<tr>
+					<td>非常镇静。对刺激有反应，不能服从指令?</td>
+					<td class="you"><input type="radio" onclick="chakan()" name=box1>是 +1</td>
+				</tr>
+				<tr>
+					<td>镇静。难以唤醒，能服从简单指令?</td>
+					<td class="you"><input type="radio" onclick="chakan()" name=box1>是 +1</td>
+				</tr>
+				<tr>
+					<td>安静合作。服从指令?</td>
+					<td>
+						<input type="radio" onclick="chakan()" name=box1>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>躁动。试图坐起但经语言提示劝阻可安静?</td>
+					<td>
+						<input type="radio" onclick="chakan()" name=box1>是 +1
+					</td>
+				</tr>
+				
+				<tr>
+					<td>非常躁动。无法平静，需要约束，咬气管内插管?</td>
+					<td>
+						<input type="radio" onclick="chakan()" name=box1>是 +1
+					</td>
+				</tr>
+				<tr>
+					<td>危险躁动。拉拽气管内插管，攻击医护人员，翻越床栏?</td>
+					<td>
+						<input type="radio" onclick="chakan()" name=box1>是 +1
+					</td>
+				</tr>
+				
+				<tr>
+					<td>评分</td>
+					<td><input type="text" id="jieguo"></td>
+				</tr>
+				<tr>
+					<td style="width: 400px;background-color: #ccc" colspan="2">躁动：是一种伴有不停动作的易激惹状态，或者说是一种伴随着挣扎动作的极度焦虑状态。在综合ICU中，70%以上的病人发生过躁动。躁动可导致病人与呼吸机对抗，耗氧量增加，
+						意外拔除身上各种装置和导管甚至危及生命。
+					</td>
+				</tr>
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

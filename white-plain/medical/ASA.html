@@ -1,0 +1,65 @@
+<HTML>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASA分级</title>
+ <script src="jquery-2.1.3.js" type="text/javascript"></script>
+<script>
+function countChoices(obj) {
+
+	box1 = obj.form.box1.checked;
+	box2 = obj.form.box2.checked;
+	box3 = obj.form.box3.checked;
+	box4 = obj.form.box4.checked;
+	box5 = obj.form.box5.checked;
+	box6 = obj.form.box6.checked;
+
+	count=(box1 ? 1 : 0)+(box2 ? 1 : 0)+(box3 ? 1 : 0)+(box4 ? 1 : 0)+(box5 ? 1 : 0)+(box6 ? 1 : 0);
+	if(count!==null){
+	$("#jg").val(count);
+	
+}
+
+}
+
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<table>
+	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">ASA分级</h3>
+			<tr><td>体征/症状：</td></tr>
+				
+			<tr>	
+				<td>健康患者</td>    
+				<td><input type=checkbox name=box1 onClick="countChoices(this)">是</td>
+			</tr> 
+			<tr>
+				<td>轻度全身性疾病患者</td>
+	             <td><input type=checkbox name=box2 onClick="countChoices(this)">是</td>
+	        </tr> 
+			<tr>
+				<td>重度全身性疾病患者</td> 
+		        <td><input type=checkbox name=box3 onClick="countChoices(this)">是</td>
+		    </tr>
+			<tr>
+				<td>重度全身性疾病患者且按时服药</td> 
+	            <td><input type=checkbox name=box4 onClick="countChoices(this)">是</td>
+	        </tr> 
+			<tr>
+				<td>病情危重，不手术难以存活</td> 
+                <td><input type=checkbox name=box5 onClick="countChoices(this)">是</td>
+             </tr>
+             <tr>
+             	<td>宣布脑死亡的患者为器官移植目的而取出标本</td>
+             	<td><input type=checkbox name=box6 onClick="countChoices(this)">是</td>
+             </tr>
+           
+			<tr><td>结果</td>  <td><input type="text" id="jg"></td></tr>
+			 
+	</table>
+      </form>
+</body>
+</html>

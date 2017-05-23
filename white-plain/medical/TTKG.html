@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>肾小管钾浓度梯度（TTKG）计算</title>
+		<script src="jquery-2.1.3.js" type="text/javascript"></script>
+		<script>
+			function chakan(obj){
+				var xqsty=document.getElementById("xqs").value;
+				var nsty=document.getElementById("ns").value;
+				var xqjnd=document.getElementById("xqj").value;
+				var njnd=document.getElementById("njn").value;
+				if(xqsty!==null){
+					var xuqiu=(njnd/xqjnd)/(nsty/xqsty);
+					$("#jg").val(xuqiu);
+				}
+				
+		}
+		</script>
+	</head>
+	<body>
+		<form name=form>
+			<table>
+				<h3 style="border-bottom:1px dotted #ccc;margin-top:30px">肾小管钾浓度梯度（TTKG）计算</h3>
+				
+				<tr>
+					<td>血清渗透压</td>
+					<td><input type="text" id="xqs">mmoI/kg</td>
+				</tr>
+				<tr>
+					<td>尿渗透压</td>
+					<td><input type="text" id="ns">mmoI/kg</td>
+				</tr>
+				
+				<tr>
+					<td>血清钾浓度</td>
+					<td><input type="text" id="xqj">mmoI/L</td>
+				</tr>
+				<tr>
+					<td>尿钾浓度</td>
+					<td><input type="text" id="njn">mmoI/L</td>
+				</tr>
+				
+				<tr>
+					<td>肾小管钾浓度梯度</td>
+					<td>
+						<input type="text" id="jg" value="查看结果" onclick="chakan()">
+						
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 500px;background-color: #ccc" colspan="2">肾小管尿钾浓度梯度(transtubular potassium concentration gradient,TTKG)测定在低钾型周期性瘫痪(hypokalemic periodic paralysis,HPP)
+						诊断和治疗中的意义。结果原发组TTKG为(1.74±0.44),继发组为(4.59±1.05),甲亢组为(1.74±0.55),正常对照组为(7.21±1.38),比较有统计学意义(P0.01);原发性HPP患者应少补钾,
+						相反,继发性HPP应多补钾。结论TTKG可在早期作为鉴别原发性与继发性HPP的指标之一,并指导治疗,避免补钾治疗后出现反跳性高钾血症。</td>
+				</tr>
+			
+			</table>
+			
+		</form>
+	</body>
+	
+	
+</html>

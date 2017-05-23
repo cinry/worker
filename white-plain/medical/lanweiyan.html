@@ -1,0 +1,105 @@
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>急性阑尾炎Alvarado评分</title>
+	 <script src="jquery-2.1.3.js" type="text/javascript"></script>
+	<script>
+	function countChoices(obj) {
+
+		box1 = obj.form.box1.checked;
+		box2 = obj.form.box2.checked;
+		box3 = obj.form.box3.checked;
+		box4 = obj.form.box4.checked;
+		box5 = obj.form.box5.checked;
+		box6 = obj.form.box6.checked;
+		box7 = obj.form.box7.checked;
+		box8 = obj.form.box8.checked;
+
+	count=(box1 ? 2 : 0)+(box2 ? 1 : 0)+(box3 ? 1 : 0)+(box4 ? 1 : 0)+(box5 ? 1 : 0)+(box6 ? 1 : 0)+(box7 ? 2 : 0)+(box8 ? 1 : 0);
+	if(count<4){
+	$("#jieguo").val(count);
+	$("#jg").html("Alvarado评分显示不可能为阑尾炎。As the Alvarado Score is numerical, it has been evaluated for ruling in and ruling out appendicitis. Studies ruling out appendicitis (using Alvarado < 3-4) have a sensitivity of 96%; studies ruling in appendicitis (using Alvarado > 6-7) have a sensitivity of 58-88%, depending on the study and score cutoffs used.The 2007 McKay study (see below) recommends CT scan for Alvarado 4-6, surgical consultation for Alvarado ≥ 7, and for Alvarado ≤ 3, no CT for diagnosing appendicitis, as appendicitis is unlikely.");
+	
+}else if(count==5||count==6){
+	$("#jieguo").val(count);
+	$("#jg").html("Alvarado评分显示可能为阑尾炎。As the Alvarado Score is numerical, it has been evaluated for ruling in and ruling out appendicitis. Studies ruling out appendicitis (using Alvarado < 3-4) have a sensitivity of 96%; studies ruling in appendicitis (using Alvarado > 6-7) have a sensitivity of 58-88%, depending on the study and score cutoffs used.The 2007 McKay study (see below) recommends CT scan for Alvarado 4-6, surgical consultation for Alvarado ≥ 7, and for Alvarado ≤ 3, no CT for diagnosing appendicitis, as appendicitis is unlikely.");
+}else if(count==7||count==8){
+	$("#jieguo").val(count);
+	$("#jg").html("Alvarado评分显示很可能为阑尾炎。As the Alvarado Score is numerical, it has been evaluated for ruling in and ruling out appendicitis. Studies ruling out appendicitis (using Alvarado < 3-4) have a sensitivity of 96%; studies ruling in appendicitis (using Alvarado > 6-7) have a sensitivity of 58-88%, depending on the study and score cutoffs used.The 2007 McKay study (see below) recommends CT scan for Alvarado 4-6, surgical consultation for Alvarado ≥ 7, and for Alvarado ≤ 3, no CT for diagnosing appendicitis, as appendicitis is unlikely.");
+}else{
+	$("#jieguo").val(count);
+	$("#jg").html("Alvarado评分显示确定为阑尾炎。As the Alvarado Score is numerical, it has been evaluated for ruling in and ruling out appendicitis. Studies ruling out appendicitis (using Alvarado < 3-4) have a sensitivity of 96%; studies ruling in appendicitis (using Alvarado > 6-7) have a sensitivity of 58-88%, depending on the study and score cutoffs used.The 2007 McKay study (see below) recommends CT scan for Alvarado 4-6, surgical consultation for Alvarado ≥ 7, and for Alvarado ≤ 3, no CT for diagnosing appendicitis, as appendicitis is unlikely.");
+}
+
+}
+function selectAll(){
+	var a = document.getElementsByTagName("input");
+	if(a[0].checked){
+		for(var i = 0;i<a.length;i++){
+			if(a[i].type == "checkbox") a[i].checked = false;
+			$("#jieguo").val("0");
+			$("#jg").html("Alvarado评分显示不可能为阑尾炎。As the Alvarado Score is numerical, it has been evaluated for ruling in and ruling out appendicitis. Studies ruling out appendicitis (using Alvarado < 3-4) have a sensitivity of 96%; studies ruling in appendicitis (using Alvarado > 6-7) have a sensitivity of 58-88%, depending on the study and score cutoffs used.The 2007 McKay study (see below) recommends CT scan for Alvarado 4-6, surgical consultation for Alvarado ≥ 7, and for Alvarado ≤ 3, no CT for diagnosing appendicitis, as appendicitis is unlikely.");	
+	}
+}
+	
+}
+//-->
+</script>
+</head>
+
+<body>
+      <form name="form">
+      	<table>
+	<h3 style="border-bottom:1px dotted #ccc;margin-top:30px;">急性阑尾炎Alvarado评分</h3>
+			<tr><td>体征</td></tr>
+			<tr>	
+				<td>右下腹压痛?</td>    
+				<td><input type=checkbox name=box1 onClick="countChoices(this)">是+2</td>
+			</tr> 
+			<tr>
+				<td>反跳痛?</td>
+	             <td><input type=checkbox name=box2 onClick="countChoices(this)">是+1</td>
+	        </tr> 
+			<tr>
+				<td>发热 (37.3 °C 或 99.1 °F)?</td> 
+		        <td><input type=checkbox name=box3 onClick="countChoices(this)">是+1</td>
+		    </tr>
+		    <tr><td>症状</td></tr>
+			<tr>
+				<td>疼痛转移至右下腹部?</td> 
+	            <td><input type=checkbox name=box4 onClick="countChoices(this)">是+1</td>
+	        </tr> 
+			<tr>
+				<td>厌食</td> 
+                <td><input type=checkbox name=box5 onClick="countChoices(this)">是+1</td>
+             </tr>
+             <tr>
+				<td>恶心或呕吐?</td> 
+                <td><input type=checkbox name=box6 onClick="countChoices(this)">是+1</td>
+             </tr>
+             <tr><td>实验数值</td></tr>
+             <tr>
+				<td>白细胞增多 > 10,000?</td> 
+                <td><input type=checkbox name=box7 onClick="countChoices(this)">是+2</td>
+             </tr>
+             <tr>
+				<td>白细胞 左移?</td> 
+                <td><input type=checkbox name=box8 onClick="countChoices(this)">是+1</td>
+             </tr>
+             
+			<tr><td>患者没有这些迹象?</td><td><input type="button" name="select" onclick="selectAll()" value="全不选"/></td></tr>
+			<tr><td>结果</td>  <td><input type="text" name=xianshi id="jieguo"/></td></tr>
+			<tr><td style="width: 700px;background-color: #ccc" id="jg" colspan="2"></td></tr> 
+			<tr>
+				<td style="width: 400px;background-color: #ccc;" colspan="2">
+					急性阑尾炎是外科常见病，是最多见的急腹症之一。Fitz［1］在1886年首先正确地描述了本病的病史、临床表现和病理所见，并提出阑尾切除术是本病的合理治疗。此病的临床诊断主要依靠病史、
+					临床症状、体检和实验室检查。1986年，Alvarado［2］通过对可疑阑尾炎患者的症状、体征及实验室检查进行回顾性的研究，建立了Alvarado评分，帮助临床医生筛查急性阑尾炎，
+					这也是使用最广泛的急性阑尾炎评分系统。目前，B超、CT等技术的发展为急性阑尾炎的诊断提供了很大的帮助，绝大多数急性阑尾炎患者能够早期诊治、早期手术。
+					但是，在低收入国家或不发达地区开展CT等辅助检查具有较大的困难，临床医生仍然在本病的诊断中时常遇到麻烦。因此，急性阑尾炎的评分系统仍然具有一定的应用价值。
+				</td>
+			</tr>
+	</table>
+      </form>
+</body>
+</html>
